@@ -53,7 +53,7 @@ If you open in your browser and get message like this, yes you did it.
 ## Basic Usage
 LUPI separate in two global function, Index and Store. That will explain below.
 
-### Index
+### A.1.Index
 Index is cover all requirement to get data from database. It seems like *select* funtion in sql query. You can use join, where, whereIn, whereNotIn, select, orderBy, etc. Complate JSON of Index function is like below.
 
 ```
@@ -82,7 +82,7 @@ Index is cover all requirement to get data from database. It seems like *select*
 }
 ```
 
-### Table Of Index Parameter
+### A.2.Table Of Index Parameter
 
 | No |     Parameter     |                                                     Value                                                    | Required |                                     Function                                     |          Comment          |
 |:--:|:-----------------:|:------------------------------------------------------------------------------------------------------------:|:--------:|:--------------------------------------------------------------------------------:|:-------------------------:|
@@ -100,3 +100,55 @@ Index is cover all requirement to get data from database. It seems like *select*
 | 12 | "leftJoin" :      | [  ["table2","table2.field", "=", "table1.field"],  ["table3","table3.field", "=", "table1.field"]   .... ], |     N    | Declare multiple left Join Function                                              |                           |
 | 13 | "start" :         | "DataStart",                                                                                                 |     N    | Declare get data from                                                            |                           |
 | 14 | "limit" :         | "DataLimit"                                                                                                  |     N    | Declare get data limit                                                           |                           |
+
+### A.3.Index Example
+#### Get All From Tabel
+
+> {
+>	"action"       : "list",
+>	"db"           : "sdnpakis",
+>	"table"        : "tx_hdr_buku_membaca"
+> }
+
+This json will show us all data from table database sdnpakis on table tx_hdr_buku_membaca.
+
+#### Get Only 5 Data From Tabel
+
+> {
+>	"action"       : "list",
+>	"db"           : "sdnpakis",
+>	"table"        : "tx_hdr_buku_membaca",
+> "limit"        : "5"
+> }
+
+This json will show us only 5 data from table database sdnpakis on table tx_hdr_buku_membaca.
+
+#### Get Data From Tabel with Where Parameter
+
+> {
+>	"action"       : "list",
+>	"db"           : "sdnpakis",
+>	"table"        : "tx_hdr_buku_membaca",
+> "where"        : [
+>                   ["membaca_id","=","1"]
+>                 ]
+> }
+
+This json will show us only data with membaca_id = 1 from table database sdnpakis on table tx_hdr_buku_membaca.
+
+
+#### Get Data From Tabel with Join and Where Parameter
+
+> {
+>	"action"       : "list",
+>	"db"           : "sdnpakis",
+>	"table"        : "tx_hdr_buku_membaca a",
+> "join"         : [
+>                   ["tx_hdr_buku b","b.buku_id","=","membaca_buku_id"]
+>                 ],
+> "where"        : [
+>                   ["membaca_status","=","1"]
+>                 ]
+> }
+
+This json will show us only data with membaca_status = 1 from table database sdnpakis on table tx_hdr_buku_membaca inner join with tx_hdr_buku with buku_id = membaca_buku_id.
