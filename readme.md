@@ -14,5 +14,6 @@ LUPI is my first project to simplify and optimize time to create an application 
 - License URI: [![License](https://poser.pugx.org/laravel/lumen-framework/license.svg)](https://packagist.org/packages/laravel/lumen-framework)
 
 ## Installation
+Lumen need [composer](https://getcomposer.org/download/) to manage its dependencies. So before using LUPI, make sure you installed on your machine.
 
 ## Basic Usage

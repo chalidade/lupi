@@ -107,62 +107,6 @@ return [
             'strict'    => env('DB_STRICT_MODE', false),
         ],
 
-        'mdm' => [
-            'driver'        => 'oracle',
-            'tns'           => env('DB_TNS', ''),
-            'host'          => env('DB_HOST', '10.88.48.124'),
-            'port'          => env('DB_PORT', '1521'),
-            'database'      => env('DB_DATABASE', 'NPKSBILD'),
-            'username'      => env('DB_USERNAME', 'BILLING_MDM'),
-            'password'      => env('DB_PASSWORD', 'billingmdmEDII'),
-            'charset'       => env('DB_CHARSET', 'AL32UTF8'),
-            'prefix'        => env('DB_PREFIX', ''),
-            'prefix_schema' => env('DB_SCHEMA_PREFIX', ''),
-            'edition'       => env('DB_EDITION', 'ora$base'),
-        ],
-
-        'omuster' => [
-            'driver'        => 'oracle',
-            'tns'           => env('DB_TNS', ''),
-            'host'          => env('DB_HOST', '10.88.48.124'),
-            'port'          => env('DB_PORT', '1521'),
-            'database'      => env('DB_DATABASE', 'NPKSBILD'),
-            'username'      => env('DB_USERNAME', 'BILLING_ORDER'),
-            'password'      => env('DB_PASSWORD', 'billingorderEDII'),
-            'charset'       => env('DB_CHARSET', 'AL32UTF8'),
-            'prefix'        => env('DB_PREFIX', ''),
-            'prefix_schema' => env('DB_SCHEMA_PREFIX', ''),
-            'edition'       => env('DB_EDITION', 'ora$base'),
-        ],
-
-        'omcargo' => [
-            'driver'        => 'oracle',
-            'tns'           => env('DB_TNS', ''),
-            'host'          => env('DB_HOST', '10.88.48.124'),
-            'port'          => env('DB_PORT', '1521'),
-            'database'      => env('DB_DATABASE', 'NPKSBILD'),
-            'username'      => env('DB_USERNAME', 'BILLING_ORDER_NPK'),
-            'password'      => env('DB_PASSWORD', 'billingorderNPK'),
-            'charset'       => env('DB_CHARSET', 'AL32UTF8'),
-            'prefix'        => env('DB_PREFIX', ''),
-            'prefix_schema' => env('DB_SCHEMA_PREFIX', ''),
-            'edition'       => env('DB_EDITION', 'ora$base'),
-        ],
-
-        'eng' => [
-            'driver'        => 'oracle',
-            'tns'           => env('DB_TNS', ''),
-            'host'          => env('DB_HOST', '10.88.48.124'),
-            'port'          => env('DB_PORT', '1521'),
-            'database'      => env('DB_DATABASE', 'NPKSBILD'),
-            'username'      => env('DB_USERNAME', 'BILLING_ENGINE'),
-            'password'      => env('DB_PASSWORD', 'billingengineEDII'),
-            'charset'       => env('DB_CHARSET', 'AL32UTF8'),
-            'prefix'        => env('DB_PREFIX', ''),
-            'prefix_schema' => env('DB_SCHEMA_PREFIX', ''),
-            'edition'       => env('DB_EDITION', 'ora$base'),
-        ],
-
     ],
 
     /*
