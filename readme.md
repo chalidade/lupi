@@ -15,7 +15,9 @@ LUPI is my first project to simplify and optimize time to create an application 
 
 ## Installation
 1. Install Composser
+
 Lumen need [composer](https://getcomposer.org/download/) to manage its dependencies. So before using LUPI, make sure you installed on your machine.
+
 2. Tes
 
 ## Basic Usage
