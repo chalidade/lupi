@@ -118,7 +118,7 @@ This json will show us all data from table database sdnpakis on table tx_hdr_buk
 	"action"       : "list",
 	"db"           : "sdnpakis",
 	"table"        : "tx_hdr_buku_membaca",
- "limit"        : "5"
+  "limit"        : "5"
  }
 ```
 This json will show us only 5 data from table database sdnpakis on table tx_hdr_buku_membaca.
@@ -129,9 +129,7 @@ This json will show us only 5 data from table database sdnpakis on table tx_hdr_
 	"action"       : "list",
 	"db"           : "sdnpakis",
 	"table"        : "tx_hdr_buku_membaca",
- "where"        : [
-                   ["membaca_id","=","1"]
-                 ]
+  "where"        : [["membaca_id","=","1"]]
  }
 ```
 This json will show us only data with membaca_id = 1 from table database sdnpakis on table tx_hdr_buku_membaca.
@@ -143,12 +141,8 @@ This json will show us only data with membaca_id = 1 from table database sdnpaki
 	"action"       : "list",
 	"db"           : "sdnpakis",
 	"table"        : "tx_hdr_buku_membaca a",
- "join"         : [
-                   ["tx_hdr_buku b","b.buku_id","=","membaca_buku_id"]
-                 ],
- "where"        : [
-                   ["membaca_status","=","1"]
-                 ]
+  "join"         : [["tx_hdr_buku b","b.buku_id","=","membaca_buku_id"]],
+  "where"        : [["membaca_status","=","1"]]
  }
 ```
 This json will show us only data with membaca_status = 1 from table database sdnpakis on table tx_hdr_buku_membaca inner join with tx_hdr_buku with buku_id = membaca_buku_id.
