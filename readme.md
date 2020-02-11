@@ -104,45 +104,45 @@ Index is cover all requirement to get data from database. It seems like *select*
 ### A.3.Index Example
 #### Get All From Tabel
 ```
- {
-	"action"       : "list",
-	"db"           : "sdnpakis",
-	"table"        : "tx_hdr_buku_membaca"
- }
+{
+"action"       : "list",
+"db"           : "sdnpakis",
+"table"        : "tx_hdr_buku_membaca"
+}
 ```
 This json will show us all data from table database sdnpakis on table tx_hdr_buku_membaca.
 
 #### Get Only 5 Data From Tabel
 ```
- {
-	"action"       : "list",
-	"db"           : "sdnpakis",
-	"table"        : "tx_hdr_buku_membaca",
-  "limit"        : "5"
- }
+{
+"action"       : "list",
+"db"           : "sdnpakis",
+"table"        : "tx_hdr_buku_membaca",
+"limit"        : "5"
+}
 ```
 This json will show us only 5 data from table database sdnpakis on table tx_hdr_buku_membaca.
 
 #### Get Data From Tabel with Where Parameter
 ```
- {
-	"action"       : "list",
-	"db"           : "sdnpakis",
-	"table"        : "tx_hdr_buku_membaca",
-  "where"        : [["membaca_id","=","1"]]
- }
+{
+"action"       : "list",
+"db"           : "sdnpakis",
+"table"        : "tx_hdr_buku_membaca",
+"where"        : [["membaca_id","=","1"]]
+}
 ```
 This json will show us only data with membaca_id = 1 from table database sdnpakis on table tx_hdr_buku_membaca.
 
 
 #### Get Data From Tabel with Join and Where Parameter
 ```
- {
-	"action"       : "list",
-	"db"           : "sdnpakis",
-	"table"        : "tx_hdr_buku_membaca a",
-  "join"         : [["tx_hdr_buku b","b.buku_id","=","membaca_buku_id"]],
-  "where"        : [["membaca_status","=","1"]]
- }
+{
+"action"       : "list",
+"db"           : "sdnpakis",
+"table"        : "tx_hdr_buku_membaca a",
+"join"         : [["tx_hdr_buku b","b.buku_id","=","membaca_buku_id"]],
+"where"        : [["membaca_status","=","1"]]
+}
 ```
 This json will show us only data with membaca_status = 1 from table database sdnpakis on table tx_hdr_buku_membaca inner join with tx_hdr_buku with buku_id = membaca_buku_id.
