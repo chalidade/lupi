@@ -93,7 +93,22 @@ return [
             'prefix'   => env('DB_PREFIX', ''),
         ],
 
-        'sdnpakis' => [
+        // Copy this example connection using Mysql
+        'exampleMysql'  => [
+            'driver'    => 'mysql',
+            'host'      => env('DB_HOST', 'localhost'),
+            'port'      => env('DB_PORT', 3306),
+            'database'  => env('DB_DATABASE', 'your_database'),
+            'username'  => env('DB_USERNAME', 'your_username'),
+            'password'  => env('DB_PASSWORD', 'your_pass'),
+            'charset'   => env('DB_CHARSET', 'utf8'),
+            'collation' => env('DB_COLLATION', 'utf8_unicode_ci'),
+            'prefix'    => env('DB_PREFIX', ''),
+            'timezone'  => env('DB_TIMEZONE', '+00:00'),
+            'strict'    => env('DB_STRICT_MODE', false),
+        ],
+
+        'sdnpakis'  => [
             'driver'    => 'mysql',
             'host'      => env('DB_HOST', 'localhost'),
             'port'      => env('DB_PORT', 3306),
