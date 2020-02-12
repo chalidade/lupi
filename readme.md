@@ -25,24 +25,28 @@ Next, open terminal then go to your LUPI Directory. Type and enter
 > composer install
 
 This function will automatically install All package or vendor to run LUPI. You will get error like this, if you don't do this step.
-> Warning: require_once(D:\xampp\htdocs\lupi\bootstrap/../vendor/autoload.php): failed to open stream: No such file or directory in ...
-> Fatal error: require_once(): Failed opening required ‘D:\xampp\htdocs\lupi\bootstrap/../vendor/autoload’ (include_path=’D:\xampp\php\PEAR’) in ...
+```
+Warning: require_once(D:\xampp\htdocs\lupi\bootstrap/../vendor/autoload.php): failed to open stream: No such file or directory in ...
+Fatal error: require_once(): Failed opening required ‘D:\xampp\htdocs\lupi\bootstrap/../vendor/autoload’ (include_path=’D:\xampp\php\PEAR’) in ...
+```
 
 ### Setting Connection
 Open folder config/database.php to setting your connection between LUPI and your database. You can copy exampleMysql and change value as your configuration.
-> 'exampleMysql'  => [
->    'driver'    => 'mysql',
->    'host'      => env('DB_HOST', 'localhost'),
->    'port'      => env('DB_PORT', 3306),
->    'database'  => env('DB_DATABASE', 'your_database'),
->    'username'  => env('DB_USERNAME', 'your_username'),
->    'password'  => env('DB_PASSWORD', 'your_pass'),
->    'charset'   => env('DB_CHARSET', 'utf8'),
->    'collation' => env('DB_COLLATION', 'utf8_unicode_ci'),
->    'prefix'    => env('DB_PREFIX', ''),
->    'timezone'  => env('DB_TIMEZONE', '+00:00'),
->    'strict'    => env('DB_STRICT_MODE', false),
->],
+```
+ 'exampleMysql'  => [
+    'driver'    => 'mysql',
+    'host'      => env('DB_HOST', 'localhost'),
+    'port'      => env('DB_PORT', 3306),
+    'database'  => env('DB_DATABASE', 'your_database'),
+    'username'  => env('DB_USERNAME', 'your_username'),
+    'password'  => env('DB_PASSWORD', 'your_pass'),
+    'charset'   => env('DB_CHARSET', 'utf8'),
+    'collation' => env('DB_COLLATION', 'utf8_unicode_ci'),
+    'prefix'    => env('DB_PREFIX', ''),
+    'timezone'  => env('DB_TIMEZONE', '+00:00'),
+    'strict'    => env('DB_STRICT_MODE', false),
+],
+```
 
 Make sure your database name, username, and password is right. You can change name of your configuration with rename exampleMysql as you want. Keep it mind, that name will use in parameter LUPI. So make easier.
 
@@ -85,7 +89,7 @@ Index is cover all requirement to get data from database. It seems like *select*
 ### A.2.Table Of Index Parameter
 
 | No |     Parameter     |                                                     Value                                                    | Required |                                     Function                                     |          Comment          |
-|:--:|:-----------------:|:------------------------------------------------------------------------------------------------------------:|:--------:|:--------------------------------------------------------------------------------:|:-------------------------:|
+|:--:|-------------------|--------------------------------------------------------------------------------------------------------------|:--------:|----------------------------------------------------------------------------------|:-------------------------:|
 |  1 | "action" :        | "list",                                                                                                      |     Y    | Declare function that will use, this parameter required to running list function | Temporary don't change it |
 |  2 | "db" :            | "DbConfigname",                                                                                              |     Y    | Declare name of your config database, change as your configuration name          |                           |
 |  3 | "table" :         | "TableName",                                                                                                 |     Y    | Declare table name on database that will execute                                 |                           |
