@@ -55,10 +55,10 @@ If you open in your browser and get message like this, yes you did it.
 > Lumen (5.7.8) (Laravel Components 5.7.)
 
 ## Basic Usage
-LUPI separate in two global function, Index and Store. That will explain below.
+LUPI separate in two global function, Index and Store. That will explain below. Before it let me give you example in postman. Just copy this [link](https://www.getpostman.com/collections/9599484d3a5a93910629) then import.
 
 ### A.1.Index
-Index is cover all requirement to get data from database. It seems like *select* funtion in sql query. You can use join, where, whereIn, whereNotIn, select, orderBy, etc. Complate JSON of Index function is like below.
+Index is cover all requirement to get data from database. It seems like *select* funtion in sql query. You can use join, where, whereIn, whereNotIn, select, orderBy, etc. Complete JSON of Index function is like below.
 
 ```
 {
@@ -150,3 +150,29 @@ This json will show us only data with membaca_id = 1 from table database sdnpaki
 }
 ```
 This json will show us only data with membaca_status = 1 from table database sdnpakis on table tx_hdr_buku_membaca inner join with tx_hdr_buku with buku_id = membaca_buku_id.
+
+### B.1. Store
+Store is cover all logic function to create, update, delete, and etc. You can using store to send data into your database with very simple. Let me show you action *simpleSave* in Store for example is full JSON.
+
+```
+{
+    "action"    : "simpleSave",
+    "db"        : "",
+    "table"     : "",
+    "primaryKey": "",
+    "value": [
+        {
+            "FIELD_ID": "",
+            "FIELD_NAME": "",
+            "FIELD_TITLE": ""
+        },
+        {
+            "FIELD_ID": "",
+            "FIELD_NAME": "",
+            "FIELD_TITLE": ""
+        },
+    ]
+}
+```
+
+### B.2.Table Of Simple Save Parameter
