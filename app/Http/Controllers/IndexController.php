@@ -26,13 +26,13 @@ class IndexController extends Controller
 
        if (!empty($input["leftJoin"])) {
          foreach ($input["leftJoin"] as $list) {
-           $connect->leftJoin(strtoupper($list["table"]), strtoupper($list["field1"]), '=', strtoupper($list["field2"]));
+           $connect->leftJoin($list["table"], $list["field1"], '=', $list["field2"]);
          }
        }
 
        if (isset($input["join"])) {
          foreach ($input["join"] as $list) {
-           $connect->join(strtoupper($list["table"]), strtoupper($list["field1"]), '=', strtoupper($list["field2"]));
+           $connect->join($list["table"], $list["field1"], '=', $list["field2"]);
          }
        }
 
@@ -46,12 +46,12 @@ class IndexController extends Controller
 
        if(isset($input["whereIn"][0])) {
          $in        = $input["whereIn"];
-         $connect->whereIn(strtoupper($in[0]), $in[1]);
+         $connect->whereIn($in[0], $in[1]);
        }
 
        if(isset($input["whereNotIn"][0])) {
          $in        = $input["whereNotIn"];
-         $connect->whereNotIn(strtoupper($in[0]), $in[1]);
+         $connect->whereNotIn($in[0], $in[1]);
        }
 
        if (!empty($input["whereBetween"])) {
@@ -59,7 +59,11 @@ class IndexController extends Controller
        }
 
        if(isset($input["groupby"])) {
-         $connect->groupBy(strtoupper($input["groupby"]));
+         $connect->groupBy($input["groupby"]);
+       }
+
+       if(isset($input["groupbyraw"])) {
+         $connect->groupBy(DB::raw($input["groupbyraw"]));
        }
 
        if (isset($input["selectraw"])) {
@@ -72,7 +76,7 @@ class IndexController extends Controller
 
        if(isset($input["orderBy"][0])) {
          $in        = $input["orderBy"];
-         $connect->orderby(strtoupper($in[0]), $in[1]);
+         $connect->orderby($in[0], $in[1]);
        }
 
        if (isset($input['start']) || $input["start"] == '0') {
@@ -84,7 +88,7 @@ class IndexController extends Controller
        $result = $connect->get();
        $count  = count($result);
 
-       return ["result"=>$result, "count" => $count];
+       return ["count" => $count, "result"=>$result];
      }
 
      function testing($input) {
