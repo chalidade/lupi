@@ -30,8 +30,8 @@ class IndexController extends Controller
          }
        }
 
-       if (isset($input["join"])) {
-         foreach ($input["join"] as $list) {
+       if (isset($input["innerJoin"])) {
+         foreach ($input["innerJoin"] as $list) {
            $connect->join($list["table"], $list["field1"], '=', $list["field2"]);
          }
        }
