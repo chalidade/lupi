@@ -84,4 +84,53 @@ class StoreController extends Controller
        echo "Delete Successfully";
      }
 
+     function saveheaderdetail($input) {
+         $data    = $input["data"];
+         $count   = count($input["data"]);
+         $cek     = strtoupper($input["HEADER"]["PK"]);
+         $dbhdr   = $input["HEADER"]["DB"];
+         $tblhdr  = $input["HEADER"]["TABLE"];
+
+         foreach ($data as $data) {
+           $val     = $input[$data];
+           $connect  = DB::connection($val["DB"])->table($val["TABLE"]);
+           if ($data == "HEADER") {
+             $sequence = DB::connection($dbhdr)->table($tblhdr)->orderBy($cek, "DESC")->first();
+             $seq      = ($sequence->$cek)+1;
+             $hdr   = json_decode(json_encode($val["VALUE"]), TRUE);
+
+             foreach ($val["VALUE"] as $list) {
+               $newDt = [];
+               foreach ($list as $key => $value) {
+                 if ($key == $cek) {
+                   $newDt[$key] = $seq;
+                 } else {
+                   $newDt[$key] = $value;
+                 }
+               }
+             }
+
+               $datahdr[] = $newDt;
+               foreach ($datahdr as $value) {
+                 $insert       = $connect->insert([$value]);
+               }
+
+             $header   = DB::connection($dbhdr)->table($tblhdr)->where($cek, $seq)->first();
+             $header   = json_decode(json_encode($header), TRUE);
+           } else {
+             if ($hdr[0][$cek] != '') {
+               $connect->where($val["FK"][0], $header[$val["FK"][1]]);
+               $connect->delete();
+             }
+             foreach ($val["VALUE"] as $value) {
+               $addVal = [$val["FK"][0]=>$header[$val["FK"][1]]]+$value;
+                   if(empty($value["id"])) {
+                     $connect->insert([$addVal]);
+                   }
+               }
+             }
+           }
+         return ["result"=>"Save or Update Success", "header"=>$header];
+     }
+
 }
