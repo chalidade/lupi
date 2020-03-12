@@ -133,4 +133,41 @@ class StoreController extends Controller
          return ["result"=>"Save or Update Success", "header"=>$header];
      }
 
+     public static function delHeaderDetail($input) {
+       $data    = $input["data"];
+       $count   = count($input["data"]);
+       $pk      = $input["HEADER"]["PK"][0];
+       $pkVal   = $input["HEADER"]["PK"][1];
+       foreach ($data as $data) {
+         $val     = $input[$data];
+         $connect  = DB::connection($val["DB"])->table($val["TABLE"]);
+           if ($data == "HEADER") {
+              $header   = $connect->where(strtoupper($pk), "like", strtoupper($pkVal))->get();
+              $header   = json_decode(json_encode($header), TRUE);
+           }
+
+           else if($data == "FILE") {
+             $fil     = [];
+             $fk      = $val["FK"][0];
+             $fkhdr   = $header[0][$val["FK"][1]];
+             $detail  = $connect->where(strtoupper($fk), "like", "%".strtoupper($fkhdr)."%")->first();
+               if (file_exists($detail->doc_path)) {
+                 $file    = unlink($detail->doc_path);
+                 $result["file"] = "File delete success";
+               } else {
+                 $result["file"] = "Error Delete File / File Not Found";
+               }
+             }
+
+           else {
+             $fk      = $val["FK"][0];
+             $fkhdr   = $header[0][$val["FK"][1]];
+             $detail  = $connect->where(strtoupper($fk), "like",  "%".strtoupper($fkhdr)."%")->delete();
+           }
+       }
+       $result["header"] = $pk." = ".$header[0][strtoupper($pk)]." Delete Success";
+       $delHead = DB::connection($input["HEADER"]["DB"])->table($input["HEADER"]["TABLE"])->where(strtoupper($pk), "like", strtoupper($pkVal))->delete();
+       return $result;
+     }
+
 }
