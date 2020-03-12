@@ -96,7 +96,11 @@ class StoreController extends Controller
            $connect  = DB::connection($val["DB"])->table($val["TABLE"]);
            if ($data == "HEADER") {
              $sequence = DB::connection($dbhdr)->table($tblhdr)->orderBy($cek, "DESC")->first();
-             $seq      = ($sequence->$cek)+1;
+             if (empty($sequence)) {
+               $seq = 1;
+             } else {
+               $seq      = ($sequence->$cek)+1;
+             }
              $hdr   = json_decode(json_encode($val["VALUE"]), TRUE);
 
              foreach ($val["VALUE"] as $list) {
@@ -165,7 +169,7 @@ class StoreController extends Controller
              $detail  = $connect->where(strtoupper($fk), "like",  "%".strtoupper($fkhdr)."%")->delete();
            }
        }
-       $result["header"] = $pk." = ".$header[0][strtoupper($pk)]." Delete Success";
+       $result["data"] = " Delete Success";
        $delHead = DB::connection($input["HEADER"]["DB"])->table($input["HEADER"]["TABLE"])->where(strtoupper($pk), "like", strtoupper($pkVal))->delete();
        return $result;
      }
