@@ -92,37 +92,58 @@ class StoreController extends Controller
          $tblhdr  = $input["HEADER"]["TABLE"];
 
          foreach ($data as $data) {
-           $val     = $input[$data];
-           $connect  = DB::connection($val["DB"])->table($val["TABLE"]);
+           $val          = $input[$data];
+           $connect      = DB::connection($val["DB"])->table($val["TABLE"]);
            if ($data == "HEADER") {
-             $sequence = DB::connection($dbhdr)->table($tblhdr)->orderBy($cek, "DESC")->first();
+             $sequence   = DB::connection($dbhdr)->table($tblhdr)->orderBy($cek, "DESC")->first();
              if (empty($sequence)) {
                $seq = 1;
              } else {
                $seq      = ($sequence->$cek)+1;
              }
-             $hdr   = json_decode(json_encode($val["VALUE"]), TRUE);
 
-             foreach ($val["VALUE"] as $list) {
-               $newDt = [];
-               foreach ($list as $key => $value) {
-                 if ($key == $cek) {
-                   $newDt[$key] = $seq;
-                 } else {
-                   $newDt[$key] = $value;
+             $hdr        = json_decode(json_encode($val["VALUE"]), TRUE);
+
+             if (!empty($hdr[0][$cek])) {
+               foreach ($val["VALUE"] as $list) {
+                 $newDt = [];
+                 foreach ($list as $key => $value) {
+                   if ($key == $cek) {
+                     $newDt[$key] = $hdr[0][$cek];
+                   } else {
+                     $newDt[$key] = $value;
+                   }
                  }
                }
-             }
 
-               $datahdr[] = $newDt;
-               foreach ($datahdr as $value) {
-                 $insert       = $connect->insert([$value]);
+                 $datahdr[] = $newDt;
+                 $delete = DB::connection($dbhdr)->table($tblhdr)->where($cek,$hdr[0][$cek])->delete();
+                 foreach ($datahdr as $value) {
+                   $insert       = $connect->insert([$value]);
+                 }
+                 $header   = DB::connection($dbhdr)->table($tblhdr)->where($cek, $hdr[0][$cek])->first();
+             } else {
+               foreach ($val["VALUE"] as $list) {
+                 $newDt = [];
+                 foreach ($list as $key => $value) {
+                   if ($key == $cek) {
+                     $newDt[$key] = $seq;
+                   } else {
+                     $newDt[$key] = $value;
+                   }
+                 }
                }
 
-             $header   = DB::connection($dbhdr)->table($tblhdr)->where($cek, $seq)->first();
+                 $datahdr[] = $newDt;
+                 foreach ($datahdr as $value) {
+                   $insert       = $connect->insert([$value]);
+                 }
+                 $header   = DB::connection($dbhdr)->table($tblhdr)->where($cek, $seq)->first();
+             }
+
              $header   = json_decode(json_encode($header), TRUE);
            } else {
-             if ($hdr[0][$cek] != '') {
+             if (!empty($hdr[0][$cek])) {
                $connect->where($val["FK"][0], $header[$val["FK"][1]]);
                $connect->delete();
              }
