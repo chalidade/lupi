@@ -64,20 +64,34 @@ class StoreController extends Controller
          //Start Loop Data if Data Not Exist then Insert and If data Exist Than Update
          $id                      = 0;
          foreach ($input["value"] as  $value) {
-           if (empty($value[$primaryKey])) {
-             $insert              = $connect->insert([$datahdr[$id]]);
-             $result[]            = "Success Insert";
-             $id++;
-            } else {
-             $update              = DB::connection($input["db"])->table($input["table"])->where($primaryKey,$value[$primaryKey])->update($value);
-             $result[]            = "Success Update";
-             $data[]              = $value;
+           // If parameter Check Exist
+           if (isset($input["checkFirst"])) {
+             $check   = DB::connection($input["db"])->table($input["table"])->where($primaryKey, $value[$primaryKey])->first();
+             if (empty($check)) {
+               $insert              = $connect->insert([$datahdr[$id]]);
+               $result[]            = "Success Insert";
+               $id++;
+             } else {
+               $update              = DB::connection($input["db"])->table($input["table"])->where($primaryKey,$value[$primaryKey])->update($value);
+               $result[]            = "Success Update";
+               $data[]              = $value;
+             }
+           } else {
+             if (empty($value[$primaryKey])) {
+               $insert              = $connect->insert([$datahdr[$id]]);
+               $result[]            = "Success Insert";
+               $id++;
+             } else {
+               $update              = DB::connection($input["db"])->table($input["table"])->where($primaryKey,$value[$primaryKey])->update($value);
+               $result[]            = "Success Update";
+               $data[]              = $value;
             }
           }
+        }
 
           // Get Result
          return ["message" => $result, "data"=>$data];
-       }
+      }
 
      function simpleDelete($input) {
        $connect = DB::connection($input["db"])->table($input["table"])->where($input["where"][0],$input["where"][1])->delete();
