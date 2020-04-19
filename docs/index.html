@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Lupi | Lumen Universal API</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <style type="text/css" media="screen">
+      .side-title {
+        font-size:16px;
+        font-weight: 700;
+        padding-left:20px;
+        padding-top:10px;
+      }
+      .side-item {
+        border:none;
+        border-radius: 0px;
+        font-size:14px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="row" style="width:100%">
+      <div class="col-2 shadow-sm" style="padding-right: 0px;">
+        <br>
+        <center><img src="assets/img/logo.png" alt="" style="width:150px"></center>
+        <br>
+        <div class="list-group" id="list-tab" role="tablist">
+          <h2 class="side-title">Getting Started</h2>
+          <a class="side-item list-group-item list-group-item-action active" id="about-list" data-toggle="list" href="#about" role="tab" aria-controls="about">About</a>
+          <a class="side-item list-group-item list-group-item-action" id="installation-list" data-toggle="list" href="#installation" role="tab" aria-controls="installation">Installation</a>
+          <a class="side-item list-group-item list-group-item-action" id="configuration-list" data-toggle="list" href="#configuration" role="tab" aria-controls="profile">Configuration</a>
+          <a class="side-item list-group-item list-group-item-action" id="how-to-consume-list" data-toggle="list" href="#how-to-consume" role="tab" aria-controls="profile">How to Consume</a>
+
+
+          <hr>
+          <h2 class="side-title">The Basic</h2>
+          <a class="side-item list-group-item list-group-item-action" id="index-function-list" data-toggle="list" href="#index-function" role="tab" aria-controls="messages">Index Funtion</a>
+          <a class="side-item list-group-item list-group-item-action" id="store-function-list" data-toggle="list" href="#store-function" role="tab" aria-controls="settings">Store Function</a>
+
+          <hr>
+          <h2 class="side-title">Index Function</h2>
+          <a class="side-item list-group-item list-group-item-action" id="showing-data-list" data-toggle="list" href="#showing-data" role="tab" aria-controls="messages">Showing Data</a>
+          <a class="side-item list-group-item list-group-item-action" id="start-limit-list" data-toggle="list" href="#start-limit" role="tab" aria-controls="settings">Start Limit</a>
+          <a class="side-item list-group-item list-group-item-action" id="where-statment-list" data-toggle="list" href="#where-statment" role="tab" aria-controls="settings">Where Statment</a>
+          <a class="side-item list-group-item list-group-item-action" id="joining-table-list" data-toggle="list" href="#joining-table" role="tab" aria-controls="settings">Joining Table</a>
+          <a class="side-item list-group-item list-group-item-action" id="selected-data-list" data-toggle="list" href="#selected-data" role="tab" aria-controls="settings">Selected Data</a>
+          <a class="side-item list-group-item list-group-item-action" id="group-data-list" data-toggle="list" href="#group-data" role="tab" aria-controls="settings">Group Data By</a>
+          <a class="side-item list-group-item list-group-item-action" id="order-data-list" data-toggle="list" href="#order-data" role="tab" aria-controls="settings">Order Data By</a>
+          <a class="side-item list-group-item list-group-item-action" id="raw-parameter-list" data-toggle="list" href="#raw-parameter" role="tab" aria-controls="settings">Raw Parameter</a>
+          <a class="side-item list-group-item list-group-item-action" id="view-header-detail-list" data-toggle="list" href="#view-header-detail" role="tab" aria-controls="settings">View Header Detail</a>
+          <hr>
+
+          <h2 class="side-title">Store Function</h2>
+          <a class="side-item list-group-item list-group-item-action" id="insert-data-list" data-toggle="list" href="#insert-data" role="tab" aria-controls="messages">Insert Data</a>
+          <a class="side-item list-group-item list-group-item-action" id="update-data-list" data-toggle="list" href="#update-data" role="tab" aria-controls="messages">Update Data</a>
+          <a class="side-item list-group-item list-group-item-action" id="delete-data-list" data-toggle="list" href="#delete-data" role="tab" aria-controls="messages">Delete Data</a>
+          <a class="side-item list-group-item list-group-item-action" id="store-header-detail-list" data-toggle="list" href="#store-header" role="tab" aria-controls="settings">Store Header Detail</a>
+          <a class="side-item list-group-item list-group-item-action" id="delete-header-detail-list" data-toggle="list" href="#delete-header" role="tab" aria-controls="settings">Delete Header Detail</a>
+          <hr>
+
+          <h2 class="side-title">Error Reporting</h2>
+          <a class="side-item list-group-item list-group-item-action" id="require-once-list" data-toggle="list" href="#require-once" role="tab" aria-controls="messages">Warning: require_once()</a>
+        </div>
+      </div>
+      <div class="col-10" style="min-height: 700px">
+        <div class="container" style="margin-top:20px;padding:20px;font-size:14px">
+          <div class="tab-content" id="nav-tabContent">
+            <div class="tab-pane fade show active" id="about" role="tabpanel" aria-labelledby="about-list">
+              <h1><font style="color: #f85351;">#</font> About</h1>
+              <hr>
+              <p>LUPI is my first project to simplify and optimize time to create an application project. You can use this to cut off all about backend, just focused on front-end then all about back-end give it to LUPI to solve them. Lupi can modified as you want, this seems like starter pack for you to develope an application. Lupi using lumen, if you're using laravel you will easy to use this</p>
+
+              <br>
+              <h4>Basic Information</h4>
+              <table class="table table-border">
+                <tr>
+                  <td width="20%">App Name</td>
+                  <td>: LUPI (Lumen Universal Application Programming Interface)</td>
+                </tr>
+                <tr>
+                  <td>App Domain</td>
+                  <td>: <a href="https://chalidade.github.io/lupi/">Github LUPI</a></td>
+                </tr>
+                <tr>
+                  <td>Version</td>
+                  <td>: 1.0</td>
+                </tr>
+                <tr>
+                  <td>Requires Lumen at least</td>
+                  <td>: 5.7.*</td>
+                </tr>
+                <tr>
+                  <td>Requires PHP</td>
+                  <td>: 7.1.*</td>
+                </tr>
+                <tr>
+                  <td>Description</td>
+                  <td>: - </td>
+                </tr>
+                <tr>
+                  <td>Author</td>
+                  <td>: Chalidade </td>
+                </tr>
+                <tr>
+                  <td>Author URI</td>
+                  <td>: Chalidade.com </td>
+                </tr>
+                <tr>
+                  <td>License</td>
+                  <td>: GNU General Public License v2 or later </td>
+                </tr>
+                <tr>
+                  <td>License URI</td>
+                  <td>: <a href="https://packagist.org/packages/laravel/lumen-framework">License</a> </td>
+                </tr>
+                <tr>
+                  <td>Powered By</td>
+                  <td>: <a href="https://packagist.org/packages/laravel/lumen-framework">Lumen</a> </td>
+                </tr>
+              </table>
+            </div>
+
+            <div class="tab-pane fade" id="installation" role="tabpanel" aria-labelledby="installation-list">
+              <h1><font style="color: #f85351;">#</font> Installation</h1>
+              <hr>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+
+
+            <div class="tab-pane fade" id="configuration" role="tabpanel" aria-labelledby="list-messages-list">
+              <h1><font style="color: #f85351;">#</font> Configuration</h1>
+              <hr>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+
+            <div class="tab-pane fade" id="how-to-consume" role="tabpanel" aria-labelledby="list-settings-list">
+              <h1><font style="color: #f85351;">#</font> How To Consume</h1>
+              <hr>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+
+            <div class="tab-pane fade" id="index-function" role="tabpanel" aria-labelledby="list-messages-list">
+              <h1><font style="color: #f85351;">#</font> Index Function</h1>
+              <hr>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+
+            <div class="tab-pane fade" id="store-function" role="tabpanel" aria-labelledby="list-messages-list">
+              <h1><font style="color: #f85351;">#</font> Store Function</h1>
+              <hr>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+
+            <div class="tab-pane fade" id="showing-data" role="tabpanel" aria-labelledby="list-messages-list">
+              <h1><font style="color: #f85351;">#</font> Showing Data</h1>
+              <hr>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+
+            <div class="tab-pane fade" id="start-limit" role="tabpanel" aria-labelledby="list-messages-list">
+              <h1><font style="color: #f85351;">#</font> Start Limit</h1>
+              <hr>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+
+            <div class="tab-pane fade" id="where-statment" role="tabpanel" aria-labelledby="list-messages-list">
+              <h1><font style="color: #f85351;">#</font> Where Statement</h1>
+              <hr>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+
+            <div class="tab-pane fade" id="joining-table" role="tabpanel" aria-labelledby="list-messages-list">
+              <h1><font style="color: #f85351;">#</font> Joining Table</h1>
+              <hr>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+
+            <div class="tab-pane fade" id="selected-data" role="tabpanel" aria-labelledby="list-messages-list">
+              <h1><font style="color: #f85351;">#</font> Selected Data</h1>
+              <hr>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+
+            <div class="tab-pane fade" id="group-data" role="tabpanel" aria-labelledby="list-messages-list">
+              <h1><font style="color: #f85351;">#</font> Group Data By</h1>
+              <hr>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+
+            <div class="tab-pane fade" id="order-data" role="tabpanel" aria-labelledby="list-messages-list">
+              <h1><font style="color: #f85351;">#</font> Order Data By</h1>
+              <hr>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+
+            <div class="tab-pane fade" id="raw-parameter" role="tabpanel" aria-labelledby="list-messages-list">
+              <h1><font style="color: #f85351;">#</font> Raw Parameter</h1>
+              <hr>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+
+            <div class="tab-pane fade" id="view-header-detail" role="tabpanel" aria-labelledby="list-messages-list">
+              <h1><font style="color: #f85351;">#</font> View Header Detail</h1>
+              <hr>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+
+            <div class="tab-pane fade" id="insert-data" role="tabpanel" aria-labelledby="list-messages-list">
+              <h1><font style="color: #f85351;">#</font> Insert Data</h1>
+              <hr>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+
+            <div class="tab-pane fade" id="update-data" role="tabpanel" aria-labelledby="list-messages-list">
+              <h1><font style="color: #f85351;">#</font> Update Data</h1>
+              <hr>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+
+            <div class="tab-pane fade" id="delete-data" role="tabpanel" aria-labelledby="list-messages-list">
+              <h1><font style="color: #f85351;">#</font> Delete Data</h1>
+              <hr>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+
+            <div class="tab-pane fade" id="store-header-detail" role="tabpanel" aria-labelledby="list-messages-list">
+              <h1><font style="color: #f85351;">#</font> Store Header Detail</h1>
+              <hr>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+
+            <div class="tab-pane fade" id="delete-header-detail" role="tabpanel" aria-labelledby="list-messages-list">
+              <h1><font style="color: #f85351;">#</font> Delete Header Detail</h1>
+              <hr>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+
+            <div class="tab-pane fade" id="require-once" role="tabpanel" aria-labelledby="list-messages-list">
+              <h1><font style="color: #f85351;">#</font> Warning: require_once(): failed to open stream</h1>
+              <hr>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="assets/js/jquery-3.4.1.slim.min.js"></script>
+  <script src="assets/js/popper.min.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
+</html>
