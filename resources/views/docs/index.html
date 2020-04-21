@@ -218,12 +218,29 @@
                 <li>Username is your username when you want to access database</li>
                 <li>Password is your password when you want to access database</li>
               </ol>
+              <br>
+              <h5><font style="color: #f85351;">#</font> .env Configuration</h5>
+              <p>As Lumen basic configuration, you need make sure that file .env is exist in your root directory. Because if .env not exist on your root directory, we will not able to running Lupi. And give configuration of your .env file like below </p>
+              <div class="bg-light" style="padding:15px">
+                APP_NAME=Lumen <br>
+                APP_ENV=local <br>
+                APP_KEY=Aqi2bcRpqcEKUltJeNDOfancUt8Cu7s6 <br>
+                APP_DEBUG=true <br>
+                APP_URL=http://localhost <br>
+                APP_TIMEZONE=UTC <br>
+                <br>
+                LOG_CHANNEL=stack <br>
+                LOG_SLACK_WEBHOOK_URL= <br>
+                 <br>
+                CACHE_DRIVER=file <br>
+                QUEUE_CONNECTION=sync <br>
+              </div>
             </div>
 
             <div class="tab-pane fade" id="how-to-consume" role="tabpanel" aria-labelledby="how-to-consume-list">
               <h1><font style="color: #f85351;">#</font> How To Consume</h1>
               <hr>
-              <p>Lupi can consume in many way. For testing you can use <a href="http://postman.io">postman</a>, the best tool for testing API. I highly recommended you to download and install postman to try lupi. Before we trying to consume Lupi, I've create database named <b>sdnpakis </b></p>
+              <p>Lupi can consume in many way. For testing you can use <a href="http://postman.io">postman</a>, the best tool for testing API. I highly recommended you to download and install postman to try lupi. Before we trying to consume Lupi, I've create database named <b>library</b></p>
               <br>
               <h4>Postman</h4>
               <p>Let's try very simple testing lupi using postman. </p>
