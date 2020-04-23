@@ -20,7 +20,7 @@
   </head>
   <body>
     <div class="row" style="width:100%">
-      <div class="col-2 shadow-sm" style="padding-right: 0px;">
+      <div class="col-md-2 shadow-sm" style="padding-right: 0px;">
         <br>
         <center><img src="assets/img/logo.png" alt="" style="width:150px"></center>
         <br>
@@ -30,7 +30,6 @@
           <a class="side-item list-group-item list-group-item-action" id="installation-list" data-toggle="list" href="#installation" role="tab" aria-controls="installation">Installation</a>
           <a class="side-item list-group-item list-group-item-action" id="configuration-list" data-toggle="list" href="#configuration" role="tab" aria-controls="profile">Configuration</a>
           <a class="side-item list-group-item list-group-item-action" id="how-to-consume-list" data-toggle="list" href="#how-to-consume" role="tab" aria-controls="profile">How to Consume</a>
-
 
           <hr>
           <h2 class="side-title">The Basic</h2>
@@ -60,16 +59,19 @@
 
           <h2 class="side-title">Error Reporting</h2>
           <a class="side-item list-group-item list-group-item-action" id="require-once-list" data-toggle="list" href="#require-once" role="tab" aria-controls="messages">Warning: require_once()</a>
+          <a class="side-item list-group-item list-group-item-action" id="whoops-list" data-toggle="list" href="#whoops" role="tab" aria-controls="messages">Whoops, looks like something went wrong</a>
+
         </div>
       </div>
-      <div class="col-10" style="min-height: 700px">
+      <div class="col-md-10" style="min-height: 700px">
         <div class="container" style="margin-top:20px;padding:20px;font-size:14px">
           <div class="tab-content" id="nav-tabContent">
             <div class="tab-pane fade show active" id="about" role="tabpanel" aria-labelledby="about-list">
               <h1><font style="color: #f85351;">#</font> About</h1>
               <hr>
-              <p>LUPI is my first project to simplify and optimize time to create an application project. You can use this to cut off all about backend, just focused on front-end then all about back-end give it to LUPI to solve them. Lupi can modified as you want, this seems like starter pack for you to develope an application. Lupi using lumen, if you're using laravel you will easy to use this</p>
+              <p>Lupi is a Universal API that builds over Laravel microservices (lumen). The API on this Lupi is reusable, and it seems like a starter API that you can modify as you want. Especially if you are familiar with Laravel, it's easy to read and modified Lupi. Lupi will cover almost all about the backend process and make the front-end more the fastest on the development process. The API in Lupi is dynamic, you can change parameters as you want and get the result. Let's try Lupi and share your experience</p>
 
+              <p>Foundation of Lupi is Lumen, it means all of Laravel syntax and function can be used to modify this API. You can using all of <a href="https://laravel.com/docs/7.x">Laravel </a> or <a href="https://lumen.laravel.com/docs/6.x/releases">Lumen</a> documentation over Lupi. Absolutely you must install composer and other requirements to running laravel well on your computer before using Lupi. Lumen choosing for a foundation that because lumen is lightwell than laravel and if you need other packages you can install as you need.</p>
               <br>
               <h4>Basic Information</h4>
               <table class="table table-border">
@@ -123,27 +125,136 @@
             <div class="tab-pane fade" id="installation" role="tabpanel" aria-labelledby="installation-list">
               <h1><font style="color: #f85351;">#</font> Installation</h1>
               <hr>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              <p>Installation Lupi is very easy, It seems like you download a template that you can use or modify as you want. The thing that you need to know is Lupi create based on Laravel microservices (Lumen) all of the function and package referrers to Lumen as a foundation to build Lupi, include service requirement and installation process.</p>
+              <h4>Server Requirement</h4>
+              <p>As shown on Lumen documentation that Laravel framework has a few system requirement. All of these requirement are satisfied by the <a href="https://laravel.com/docs/7.x/homestead">Larvel Homestead</a> virtual machine, so it's highly recommended that you use Homestead as your local Laravel development environment.</p>
+
+              <p>However, if you are not using Homestead, you will need to make sure your server have the following requirements :
+                <ul>
+                  <li>Install Xampp / Local Server</li>
+                  <li>PHP >= 7.1.3</li>
+                  <li>Open SSL PHP Extention</li>
+                  <li>PDO PHP Extention</li>
+                  <li>Mbstring PHP Extention</li>
+                </ul>
+              </p>
+              <br>
+              <h4>Installing Composer</h4>
+              <p>Lumen utilized <a href="https://getcomposer.org/download/">Composer</a> to manage it's dependencies. So Lupi need this too. Before using Lupi, make sure you have Composer installed on your server. If you need detail about this, you can visit <a href="#">How to Install Composer</a>.
+              </p>
+              <br>
+              <h4>Install Lupi</h4>
+              <p>It's easy to install Lupi in your machine, just following this step :
+                <ul>
+                  <li>First, open <a href="https://github.com/chalidade/lupi">Lupi repository</a></li>
+                  <li> Choose <b><i>Clone / Download </i></b></li>
+                  <li> If you choose <b><i>Download Zip</i></b>, after downloading open your htdoc folder if you're using Xampp or /var/www/html/ if you're using linux</li>
+                  <li>Then Extract and wait until extraction process done</li>
+                  <li>Open command prompt and open that directory</li>
+                  <li>Then, type <b>composer install</b> -> Enter</li>
+                  <li>After installation process, open your browser then open this project in you localhost</li>
+                </ul>
+              </p>
+              <p>If you got error like Fatal error: require_once(): Failed opening required, like this.
+                <div class="bg-light" style="padding:15px">
+                  Warning: require_once(D:\xampp\htdocs\lupi\bootstrap/../vendor/autoload.php): failed to open stream: No such file or directory in ...<br>
+                  Fatal error: require_once(): Failed opening required ‘D:\xampp\htdocs\lupi\bootstrap/../vendor/autoload’ (include_path=’D:\xampp\php\PEAR’) in ...
+                </div><br>
+              It mean, your <b> composer install </b> failed. if you have problem on installation process you can send me email chalidade@gmail.com
+              </p>
+
             </div>
 
 
-            <div class="tab-pane fade" id="configuration" role="tabpanel" aria-labelledby="list-messages-list">
+            <div class="tab-pane fade" id="configuration" role="tabpanel" aria-labelledby="configuration-list">
               <h1><font style="color: #f85351;">#</font> Configuration</h1>
               <hr>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              <p>There are many configuration Lupi that follow how configuration Lumen is. All that you know about Lumen you can implemented into Lupi. Include how to create new seeder, database migration, and etc. </p>
+              <br>
+              <h4>Configuration Database</h4>
+              <p>If you want to adding new database configuration in Lupi, it's simple. Open config folder, then edit database.php. Copy exampleMysql then change value as your database configuration.
+              </p>
+              <br>
+              <h5><font style="color: #f85351;">#</font> Sql Database Configuration</h5>
+              <div class="bg-light" style="padding:15px">
+                'exampleMysql'  => [ <br>
+                   'driver'    => 'mysql', <br>
+                   'host'      => env('DB_HOST', 'localhost'), <br>
+                   'port'      => env('DB_PORT', 3306), <br>
+                   'database'  => env('DB_DATABASE', 'your_database'), <br>
+                   'username'  => env('DB_USERNAME', 'your_username'), <br>
+                   'password'  => env('DB_PASSWORD', 'your_pass'), <br>
+                   'charset'   => env('DB_CHARSET', 'utf8'), <br>
+                   'collation' => env('DB_COLLATION', 'utf8_unicode_ci'), <br>
+                   'prefix'    => env('DB_PREFIX', ''), <br>
+                   'timezone'  => env('DB_TIMEZONE', '+00:00'), <br>
+                   'strict'    => env('DB_STRICT_MODE', false), <br>
+                ],
+              </div>
+              <br>
+              <h5><font style="color: #f85351;">#</font> Oracle Database Configuration</h5>
+              <div class="bg-light" style="padding:15px">
+                'exampleOracle' => [
+                      'driver'        => 'oracle', <br>
+                      'tns'           => env('DB_TNS', ''),<br>
+                      'host'          => env('DB_HOST', 'localhost'),<br>
+                      'port'          => env('DB_PORT', '1521'),<br>
+                      'database'      => env('DB_DATABASE', 'your_database'),<br>
+                      'username'      => env('DB_USERNAME', 'your_username'),<br>
+                      'password'      => env('DB_PASSWORD', 'your_password'),<br>
+                      'charset'       => env('DB_CHARSET', 'AL32UTF8'),<br>
+                      'prefix'        => env('DB_PREFIX', ''),<br>
+                      'prefix_schema' => env('DB_SCHEMA_PREFIX', ''),<br>
+                      'edition'       => env('DB_EDITION', 'ora$base'),<br>
+                  ],
+              </div>
+              <br>
+              Explanation :
+              <ol>
+                <li>exampleMysql is name of your database configuration, you will call it later in controller or json format</li>
+                <li>Drivers is database type that we use</li>
+                <li>Host is your server, you can fill with domain or IP. If you're running in local server you can use localhost</li>
+                <li>Database is name of your database</li>
+                <li>Username is your username when you want to access database</li>
+                <li>Password is your password when you want to access database</li>
+              </ol>
+              <br>
+              <h5><font style="color: #f85351;">#</font> .env Configuration</h5>
+              <p>As Lumen basic configuration, you need make sure that file .env is exist in your root directory. Because if .env not exist on your root directory, we will not able to running Lupi. And give configuration of your .env file like below </p>
+              <div class="bg-light" style="padding:15px">
+                APP_NAME=Lumen <br>
+                APP_ENV=local <br>
+                APP_KEY=Aqi2bcRpqcEKUltJeNDOfancUt8Cu7s6 <br>
+                APP_DEBUG=true <br>
+                APP_URL=http://localhost <br>
+                APP_TIMEZONE=UTC <br>
+                <br>
+                LOG_CHANNEL=stack <br>
+                LOG_SLACK_WEBHOOK_URL= <br>
+                 <br>
+                CACHE_DRIVER=file <br>
+                QUEUE_CONNECTION=sync <br>
+              </div>
             </div>
 
-            <div class="tab-pane fade" id="how-to-consume" role="tabpanel" aria-labelledby="list-settings-list">
+            <div class="tab-pane fade" id="how-to-consume" role="tabpanel" aria-labelledby="how-to-consume-list">
               <h1><font style="color: #f85351;">#</font> How To Consume</h1>
               <hr>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              <p>Lupi can consume in many way. For testing you can use <a href="http://postman.io">postman</a>, the best tool for testing API. I highly recommended you to download and install postman to try lupi. Before we trying to consume Lupi, I've create database named <b>library</b></p>
+              <br>
+              <h4>Postman</h4>
+              <p>Let's try very simple testing lupi using postman. </p>
             </div>
 
-            <div class="tab-pane fade" id="index-function" role="tabpanel" aria-labelledby="list-messages-list">
-              <h1><font style="color: #f85351;">#</font> Index Function</h1>
+            <div class="tab-pane fade" id="index-function" role="tabpanel" aria-labelledby="index-function-list">
+              <h1><font style="color: #f85351;">#</font> How To Consume</h1>
               <hr>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              <p>Lupi can consume in many way. For testing you can use <a href="http://postman.io">postman</a>, the best tool for testing API. I highly recommended you to download and install postman to try lupi. Before we trying to consume Lupi, I've create database named <b>sdnpakis </b></p>
+              <br>
+              <h4>Postman</h4>
+              <p>Let's try very simple testing lupi using postman. </p>
             </div>
+
 
             <div class="tab-pane fade" id="store-function" role="tabpanel" aria-labelledby="list-messages-list">
               <h1><font style="color: #f85351;">#</font> Store Function</h1>
@@ -240,6 +351,14 @@
               <hr>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
             </div>
+
+            <div class="tab-pane fade" id="whoops" role="tabpanel" aria-labelledby="list-messages-list">
+              <h1><font style="color: #f85351;">#</font> Whoops, looks like something went wrong</h1>
+              <hr>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+
+
 
           </div>
         </div>
