@@ -240,7 +240,7 @@
             <div class="tab-pane fade" id="how-to-consume" role="tabpanel" aria-labelledby="how-to-consume-list">
               <h1><font style="color: #f85351;">#</font> How To Consume</h1>
               <hr>
-              <p>Lupi can consume in many way. For testing you can use <a href="http://postman.io">postman</a>, the best tool for testing API. I highly recommended you to download and install postman to try lupi. Before we trying to consume Lupi, I've create database named <b>library</b>, All of library data on database, you can check on application below. Sidebar Tell us about all table on library database, just click to show the data. Then let's try to consume it. Sorry i missing something. You can try example of lupi in this link : <a href="http://lupi.titikdua.site">http://lupi.titikdua.site</a> , just copy it.</p>
+              <p>Lupi can consume in many way. For testing you can use <a href="http://postman.io">postman</a>, the best tool for testing API. I highly recommended you to download and install postman to try lupi. Before we trying to consume Lupi, I've create database named <b>library</b>, All of library data on database, you can check on application below. Sidebar Tell us about all table on library database, just click to show the data. Then let's try to consume it. You can try example of lupi in this link : <a href="http://lupi.titikdua.site">http://lupi.titikdua.site</a> , just copy it.</p>
               <hr>
               <iframe id="db" src="http://db.titikdua.site" width="100%" height="500px" style="transform: scale(90%);border:0px;"></iframe>
               <hr>
@@ -300,12 +300,151 @@
             </div>
 
             <div class="tab-pane fade" id="index-function" role="tabpanel" aria-labelledby="index-function-list">
-              <h1><font style="color: #f85351;">#</font> How To Consume</h1>
+              <h1><font style="color: #f85351;">#</font>Index</h1>
               <hr>
-              <p>Lupi can consume in many way. For testing you can use <a href="http://postman.io">postman</a>, the best tool for testing API. I highly recommended you to download and install postman to try lupi. Before we trying to consume Lupi, I've create database named <b>sdnpakis </b></p>
+              <p>Index Function is a function that we use to display data with any parameters that usually use. Every need for showing data will cover this function like joining table, grouping data, where statement, start limit, and etc. Lupi will make it easier for you Especially front to consume API in development process without waiting backend create an API. To using index funtion you just adding index in url like example : http://lupi.titikdua.site/<font color="f85351">index </font></p>
               <br>
-              <h4>Postman</h4>
-              <p>Let's try very simple testing lupi using postman. </p>
+              <h4><font style="color: #f85351;">#</font> All Parameter In Index Function</h4>
+              <p>All parameter in index function as shown below</p>
+              <div class="bg-light" style="padding:15px;font-weight:600">
+                <table>
+                  <tr>
+                    <td width="2%">{</td>
+                    <td width="20%"></td>
+                    <td width="1%"></td>
+                    <td width="77%"></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"action"</td>
+                    <td>:</td>
+                    <td>"list",</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"db"</td>
+                    <td>:</td>
+                    <td>"",</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"table"</td>
+                    <td>:</td>
+                    <td>"",</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"where"</td>
+                    <td>:</td>
+                    <td>"",</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"whereIn"</td>
+                    <td>:</td>
+                    <td>"",</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"whereBetween"</td>
+                    <td>:</td>
+                    <td>"",</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"whereNotIn"</td>
+                    <td>:</td>
+                    <td>"",</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"selected"</td>
+                    <td>:</td>
+                    <td>"",</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"groupBy"</td>
+                    <td>:</td>
+                    <td>"",</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"orderBy"</td>
+                    <td>:</td>
+                    <td>"",</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"innerJoin"</td>
+                    <td>:</td>
+                    <td>"",</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"leftJoin"</td>
+                    <td>:</td>
+                    <td>"",</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"raw"</td>
+                    <td>:</td>
+                    <td> { </td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"where"</td>
+                    <td>:</td>
+                    <td>"",</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"select"</td>
+                    <td>:</td>
+                    <td>"",</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"groupBy"</td>
+                    <td>:</td>
+                    <td>"",</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"orderBy"</td>
+                    <td>:</td>
+                    <td>""</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td> }, </td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"start"</td>
+                    <td>:</td>
+                    <td>"",</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"limit"</td>
+                    <td>:</td>
+                    <td>""</td>
+                  </tr>
+                  <tr>
+                    <td>}</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                </table>
+              </div>
+              <br>
+              <h4><font style="color: #f85351;">#</font> Table Of Index Function</h4>
+              <p>This table will explain every parameter on Index Funtion</p>
             </div>
 
 
