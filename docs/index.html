@@ -445,6 +445,138 @@
               <br>
               <h4><font style="color: #f85351;">#</font> Table Of Index Function</h4>
               <p>This table will explain every parameter on Index Funtion</p>
+              <div class="table-responsive">
+                <table class="table table-border">
+                  <tr style="text-align:center">
+                    <th width="5%">No</th>
+                    <th width="10%" style="text-align:left">Parameter</th>
+                    <th width="30%" style="text-align:left">Value</th>
+                    <th width="10%">Required</th>
+                    <th width="30%">Function</th>
+                    <th width="15%">Comment</th>
+                  </tr>
+                  <tr>
+                    <td>1</td>
+                    <td>"action" :</td>
+                    <td>"list",</td>
+                    <td style="text-align:center">Y</td>
+                    <td style="text-align:justify">Declare function that will use, this parameter required to running list function</td>
+                    <td>Temporary don't change it</td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>"db" :</td>
+                    <td>"DbConfigname",</td>
+                    <td style="text-align:center">Y</td>
+                    <td style="text-align:justify">Declare name of your config database, change as your configuration name</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td>"table" :</td>
+                    <td>TableName",</td>
+                    <td style="text-align:center">Y</td>
+                    <td style="text-align:justify">Declare table name on database that will execute</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>4</td>
+                    <td>"where" :</td>
+                    <td>[ ["fieldName1","=", "value1"], ["fieldName2",">", "value2"] ... ],</td>
+                    <td style="text-align:center">N</td>
+                    <td style="text-align:justify">Declare Multiple Where condition</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>5</td>
+                    <td>"whereIn" :</td>
+                    <td>["field", ["value1","value2",...]],</td>
+                    <td style="text-align:center">N</td>
+                    <td style="text-align:justify">Declare name of your config database, change as your configuration name</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>6</td>
+                    <td>"whereBetween" :</td>
+                    <td>["field", ["ValueStart","ValueStop"]],</td>
+                    <td style="text-align:center">N</td>
+                    <td style="text-align:justify"> 	Declare WhereBetween Condition</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>7</td>
+                    <td>"whereNotIn" :</td>
+                    <td>["field", ["value1","value2",...]],</td>
+                    <td style="text-align:center">N</td>
+                    <td style="text-align:justify">Declare WhereNotIn Condition</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>8</td>
+                    <td>"selected" :</td>
+                    <td>["field1","field2","field3"...],</td>
+                    <td style="text-align:center">N</td>
+                    <td style="text-align:justify">Declare selected field that you want to show</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>9</td>
+                    <td>"groupBy" :</td>
+                    <td>"field",</td>
+                    <td style="text-align:center">N</td>
+                    <td style="text-align:justify">Declare groupBy field in your result</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>10</td>
+                    <td>"orderBy" :</td>
+                    <td>["field","DESC/ASC"],</td>
+                    <td style="text-align:center">N</td>
+                    <td style="text-align:justify">Declare orderBy data, choose ASC for ascending or DESC for descending</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>11</td>
+                    <td>"innerJoin" :</td>
+                    <td>[ <br>
+                        {"table2","table2.field", "=", "table1.field"}, <br>
+                        {"table3","table3.field", "=", "table1.field"},<br>
+                         .... <br>
+                         ],</td>
+                    <td style="text-align:center">N</td>
+                    <td style="text-align:justify"> 	Declare multiple inner Join function</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>12</td>
+                    <td>"leftJoin" :</td>
+                    <td>[ <br>
+                        {"table2","table2.field", "=", "table1.field"}, <br>
+                        {"table3","table3.field", "=", "table1.field"},<br>
+                         .... <br>
+                         ],</td>
+                    <td style="text-align:center">N</td>
+                    <td style="text-align:justify">	Declare multiple left Join Function</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>13</td>
+                    <td>"start" :</td>
+                    <td>"DataStart",</td>
+                    <td style="text-align:center">N</td>
+                    <td style="text-align:justify">Declare get data from</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>14</td>
+                    <td>"limit" :</td>
+                    <td>"DataLimit"</td>
+                    <td style="text-align:center">N</td>
+                    <td style="text-align:justify">	Declare get data limit</td>
+                    <td></td>
+                  </tr>
+                </table>
+              </div>
             </div>
 
 
