@@ -242,7 +242,7 @@
               <hr>
               <p>Lupi can consume in many way. For testing you can use <a href="http://postman.io">postman</a>, the best tool for testing API. I highly recommended you to download and install postman to try lupi. Before we trying to consume Lupi, I've create database named <b>library</b>, All of library data on database, you can check on application below. Sidebar Tell us about all table on library database, just click to show the data. Then let's try to consume it. You can try example of lupi in this link : <a href="http://lupi.titikdua.site">http://lupi.titikdua.site</a> , just copy it.</p>
               <hr>
-              <iframe id="db" src="http://db.titikdua.site" width="100%" height="500px" style="transform: scale(90%);border:0px;"></iframe>
+              <!-- <iframe id="db" src="http://db.titikdua.site" width="100%" height="500px" style="transform: scale(90%);border:0px;"></iframe> -->
               <hr>
               <h4><font style="color: #f85351;">#</font> Postman</h4>
               <p>Let's try very simple testing lupi using postman. Let's do this.
@@ -589,19 +589,337 @@
             <div class="tab-pane fade" id="showing-data" role="tabpanel" aria-labelledby="list-messages-list">
               <h1><font style="color: #f85351;">#</font> Showing Data</h1>
               <hr>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              <p>Lupi can showing data in our database, just set on parameter on with right value and you will get data as you need. In this menu, Lupi will explain with very clearly and detail about how to showing data and what query looks like with the parameter set. Let's try with simple method. </p>
+              <br>
+              <h4><font style="color: #f85351;">#</font> Example 1</h4>
+              <p>This is very simple way to show alll data on your table in a database. Just need 3 basic paramater. Like an example below</p>
+              <div class="bg-light" style="padding:15px;">
+                { <br>
+                	"action"       : "list", <br>
+                	"db"           : "library", <br>
+                	"table"        : "TX_HDR_BOOK" <br>
+                }
+              </div>
+              <p>if you're familiar with SQL Query, Those parameter will generate an SQL Query like below</p>
+              <div class="bg-light" style="padding:15px;">
+                SELECT * FROM TX_HDR_BOOK
+              </div>
+              <p>And execute in <b>library</b> Lupi configuration database.</p>
+              <br>
+              <br>
+              <h4><font style="color: #f85351;">#</font> Example 2</h4>
+              <p>Let's trying adding <b>where</b> stament on that's parameter</p>
+              <div class="bg-light" style="padding:15px;">
+                <table>
+                  <tr>
+                    <td>{</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"action"</td>
+                    <td>:</td>
+                    <td>"list", </td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"db"</td>
+                    <td>:</td>
+                    <td>"library",</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"table"</td>
+                    <td>:</td>
+                    <td>"TX_HDR_BOOK",</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"where"</td>
+                    <td>:</td>
+                    <td>[</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>["BOOK_CATEGORY", "=", "FICTION"],</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>["BOOK_QTY", ">", "5"]</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td>]</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>}</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                </table>
+              </div>
+              <p>Those parameter will generate an SQL Query like below</p>
+              <div class="bg-light" style="padding:15px;">
+                SELECT * FROM `TX_HDR_BOOK` WHERE `BOOK_CATEGORY` = 'FICTION' AND `BOOK_QTY` > '5'
+              </div>
+              <br>
+              <br>
+              <h4><font style="color: #f85351;">#</font> Example 3</h4>
+              <p>Let's trying adding <br>limit</b> function on that's parameter</p>
+              <div class="bg-light" style="padding:15px;">
+                <table>
+                  <tr>
+                    <td>{</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"action"</td>
+                    <td>:</td>
+                    <td>"list", </td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"db"</td>
+                    <td>:</td>
+                    <td>"library",</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"table"</td>
+                    <td>:</td>
+                    <td>"TX_HDR_BOOK",</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"where"</td>
+                    <td>:</td>
+                    <td>[</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>["BOOK_CATEGORY", "=", "FICTION"]</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td>],</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"limit"</td>
+                    <td>:</td>
+                    <td>"2"</td>
+                  </tr>
+                  <tr>
+                    <td>}</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                </table>
+              </div>
+              <p>Those parameter will generate an SQL Query like below</p>
+              <div class="bg-light" style="padding:15px;">
+                SELECT * FROM `TX_HDR_BOOK` WHERE `BOOK_CATEGORY` = 'FICTION' LIMIT 2
+              </div>
+              <br>
+              <br>
+              <h4><font style="color: #f85351;">#</font> Example 4</h4>
+              <p>Let's trying simple join</p>
+              <div class="bg-light" style="padding:15px;">
+                <table>
+                  <tr>
+                    <td>{</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"action"</td>
+                    <td>:</td>
+                    <td>"list", </td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"db"</td>
+                    <td>:</td>
+                    <td>"library",</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"table"</td>
+                    <td>:</td>
+                    <td>"TX_HDR_USER",</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"join"</td>
+                    <td>:</td>
+                    <td>{</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td style="text-align:center">{</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                      <table>
+                        <tr>
+                          <td>"table"</td>
+                          <td>:</td>
+                          <td>"TX_DTL_USER"</td>
+                        </tr>
+                        <tr>
+                          <td>"field1"</td>
+                          <td>:</td>
+                          <td>"TX_DTL_USER.DTL_HDR_ID"</td>
+                        </tr>
+                        <tr>
+                          <td>"table"</td>
+                          <td>:</td>
+                          <td>"TX_HDR_USER.USER_ID"</td>
+                        </tr>
+                      </table>
+                    </td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td style="text-align:center">}</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>},</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"where"</td>
+                    <td>:</td>
+                    <td>[</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>["USER_ID", "=", "1"]</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td>]</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>}</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                </table>
+              </div>
+              <p>Those parameter will generate an SQL Query like below</p>
+              <div class="bg-light" style="padding:15px;">
+                SELECT * FROM `TX_HDR_BOOK` JOIN `TX_DTL_USER` ON `TX_DTL_USER`.`DTL_HDR_ID` = `TX_HDR_BOOK`.`USER_ID` WHERE `USER_ID` = '1'
+              </div>
             </div>
 
             <div class="tab-pane fade" id="start-limit" role="tabpanel" aria-labelledby="list-messages-list">
               <h1><font style="color: #f85351;">#</font> Start Limit</h1>
               <hr>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              <p>Start and limit in index funtion using for pagination or get limited data as you needs. Start is use to get data from index x. then limit use to indentified how many data that we want to get. As example, if we want to get data in table <b>TX_HDR_BOOK</b> from index 0 and we want get only 2 data. So we use json format like this.
+
+                <div class="bg-light" style="padding:15px;">
+                  <table>
+                    <tr>
+                      <td>{</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td>"action"</td>
+                      <td>:</td>
+                      <td>"list", </td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td>"db"</td>
+                      <td>:</td>
+                      <td>"library",</td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td>"table"</td>
+                      <td>:</td>
+                      <td>"TX_HDR_USER",</td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td>"start"</td>
+                      <td>:</td>
+                      <td>"0"</td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td>"limit"</td>
+                      <td>:</td>
+                      <td>"2"</td>
+                    </tr>
+                    <tr>
+                      <td>}</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                  </table>
+                </div>
+                <p>That's parameter will generate SQL Script like below</p>
+                <div class="bg-light" style="padding:15px;">
+                  SELECT * FROM `TX_HDR_BOOK` LIMIT 0,2
+                </div>
+              </p>
+              <p>Absolutly you can combine start and limit with any parameter from index function to get result as you want. </p>
             </div>
 
             <div class="tab-pane fade" id="where-statment" role="tabpanel" aria-labelledby="list-messages-list">
               <h1><font style="color: #f85351;">#</font> Where Statement</h1>
               <hr>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              <p>Where Statment is a parameter that often we will use. This parameter can be used to filtering data or get data with a keyword. Where statements can be used with other parameter include join parameter. There are few where statement that explain below</p>
+              <br>
+              <h4><font style="color: #f85351;">#</font> Basic Where</h4>
+              <p></p>
             </div>
 
             <div class="tab-pane fade" id="joining-table" role="tabpanel" aria-labelledby="list-messages-list">
