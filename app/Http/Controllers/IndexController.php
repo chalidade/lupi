@@ -44,6 +44,10 @@ class IndexController extends Controller
          $connect->where($input["where"]);
        }
 
+       if(isset($input["where"][0])) {
+         $connect->where($input["where"]);
+       }
+
        if(isset($input["whereIn"][0])) {
          $in        = $input["whereIn"];
          $connect->whereIn($in[0], $in[1]);
@@ -79,7 +83,7 @@ class IndexController extends Controller
          $connect->orderby($in[0], $in[1]);
        }
 
-       if (isset($input['start']) || $input["start"] == '0') {
+       if (isset($input['start'])) {
          if (!empty($input['limit'])) {
            $connect->skip($input['start'])->take($input['limit']);
          }
