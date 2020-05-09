@@ -919,7 +919,153 @@
               <p>Where Statment is a parameter that often we will use. This parameter can be used to filtering data or get data with a keyword. Where statements can be used with other parameter include join parameter. There are few where statement that explain below</p>
               <br>
               <h4><font style="color: #f85351;">#</font> Basic Where</h4>
-              <p></p>
+              <p>This is basic where template and how where statement explain</p>
+              <div class="bg-light" style="padding:15px;">
+                <table>
+                  <tr>
+                    <td>{</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"action"</td>
+                    <td>:</td>
+                    <td>"list", </td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"db"</td>
+                    <td>:</td>
+                    <td>"your_database_config",</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"table"</td>
+                    <td>:</td>
+                    <td>"your_table",</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"where"</td>
+                    <td>:</td>
+                    <td>[</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>["field1", "=", "value"],</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>["field2", ">", "value"],</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>.....</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>.....</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td>]</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>}</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                </table>
+              </div>
+              <p>Basic where statement will generate <b>AND</b> condition in every field and value. In that case, that will generate an SQL code like below</p>
+              <div class="bg-light" style="padding:15px;">
+                SELECT * FROM `your_table` WHERE `field1` = 'value' <b> AND </b> `field2` > 'value' <b> AND </b> `field3` = 'value' <b> AND </b> ......... <b> AND </b> .........
+              </div>
+              <br>
+              <p>Every new condition will generate AND condition on Basic where. Format of statements is patent, ['field', 'operator', 'value'] as long as you don't modified the main of LUPI controller. All of operator that you apply on SQL code, you can use in LUPI too.  </p>
+              <br>
+              <h5><font style="color: #f85351;">#</font> Example 1</h5>
+              <br>
+              <div class="bg-light" style="padding:15px;">
+                <table>
+                  <tr>
+                    <td>{</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"action"</td>
+                    <td>:</td>
+                    <td>"list", </td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"db"</td>
+                    <td>:</td>
+                    <td>"library",</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"table"</td>
+                    <td>:</td>
+                    <td>"TX_HDR_BOOK",</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"where"</td>
+                    <td>:</td>
+                    <td>[</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>["BOOK_CATEGORY", "=", "FICTION"]</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td>],</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"limit"</td>
+                    <td>:</td>
+                    <td>"2"</td>
+                  </tr>
+                  <tr>
+                    <td>}</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                </table>
+              </div>
+              <p>Those parameter will generate an SQL Query like below</p>
+              <div class="bg-light" style="padding:15px;">
+                SELECT * FROM `TX_HDR_BOOK` WHERE `BOOK_CATEGORY` = 'FICTION' LIMIT 2
+              </div>
             </div>
 
             <div class="tab-pane fade" id="joining-table" role="tabpanel" aria-labelledby="list-messages-list">
