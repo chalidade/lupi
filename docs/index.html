@@ -1062,10 +1062,161 @@
                   </tr>
                 </table>
               </div>
+              <br>
               <p>Those parameter will generate an SQL Query like below</p>
               <div class="bg-light" style="padding:15px;">
                 SELECT * FROM `TX_HDR_BOOK` WHERE `BOOK_CATEGORY` = 'FICTION' LIMIT 2
               </div>
+              <br>
+              <h5><font style="color: #f85351;">#</font> Example 2</h5>
+              <br>
+              <div class="bg-light" style="padding:15px;">
+                <table>
+                  <tr>
+                    <td>{</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"action"</td>
+                    <td>:</td>
+                    <td>"list", </td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"db"</td>
+                    <td>:</td>
+                    <td>"library",</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"table"</td>
+                    <td>:</td>
+                    <td>"TX_HDR_BOOK",</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"where"</td>
+                    <td>:</td>
+                    <td>[</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>["BOOK_CATEGORY", "=", "FICTION"],</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>["BOOK_TITLE", "like", "%farmer%"]</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td>]</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>}</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                </table>
+              </div>
+              <br>
+              <p>Like SQL Query, you can use 'like' operator as condition, Those parameter will generate an SQL Query like below</p>
+              <div class="bg-light" style="padding:15px;">
+                SELECT * FROM `TX_HDR_BOOK` WHERE `BOOK_CATEGORY` = 'FICTION' AND `BOOK_TITLE` like '%farmer%'
+              </div>
+              <br><br>
+              <h4><font style="color: #f85351;">#</font> Or Where</h4>
+              <p>Or Where use to get data on <b> OR </b> condition seems like Basic where, every condition will generate <b>OR</b> condition. Absolutly you can combine this Or Where with Basic Where. Or Where format show on below</p>
+              <div class="bg-light" style="padding:15px;">
+                <table>
+                  <tr>
+                    <td>{</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"action"</td>
+                    <td>:</td>
+                    <td>"list", </td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"db"</td>
+                    <td>:</td>
+                    <td>"your_database_config",</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"table"</td>
+                    <td>:</td>
+                    <td>"your_table",</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"where"</td>
+                    <td>:</td>
+                    <td>[</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>["field1", "=", "value"],</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>["field2", ">", "value"],</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>.....</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>.....</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td>]</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>}</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                </table>
+              </div>
+              <p>Basic where statement will generate <b>AND</b> condition in every field and value. In that case, that will generate an SQL code like below</p>
+              <div class="bg-light" style="padding:15px;">
+                SELECT * FROM `your_table` WHERE `field1` = 'value' <b> AND </b> `field2` > 'value' <b> AND </b> `field3` = 'value' <b> AND </b> ......... <b> AND </b> .........
+              </div>
+              <br>
             </div>
 
             <div class="tab-pane fade" id="joining-table" role="tabpanel" aria-labelledby="list-messages-list">
