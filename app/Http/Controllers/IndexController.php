@@ -44,8 +44,8 @@ class IndexController extends Controller
          $connect->where($input["where"]);
        }
 
-       if(isset($input["where"][0])) {
-         $connect->where($input["where"]);
+       if(isset($input["whereOr"][0])) {
+         $connect->orWhere($input["where"]);
        }
 
        if(isset($input["whereIn"][0])) {
