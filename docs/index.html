@@ -1997,8 +1997,7 @@
                 SELECT * FROM `your_table` <br>INNER JOIN `your_joining_table` ON `your_table`.your_field_on_table1 = `your_joining_table`.your_field_on_table <br>INNER JOIN `your_joining_table` AS C ON C.your_field_on_table1 = `your_table`.your_field_on_table2
               </div>
               <br>
-              <p>Let's jump into an Example</p>
-              <br>
+              <!-- <p>Let's jump into an Example</p> -->
               <h5><font style="color: #f85351;">#</font> Example 1</h5>
               <br>
               <div class="bg-light" style="padding:15px;">
@@ -2101,7 +2100,7 @@
               </div>
               <br><br>
               <h4><font style="color: #f85351;">#</font> Left Join</h4>
-              <p>Left Join will returns data that have matching values in both tables,If the values of one of the data do not match then the data will not be displayed, while the same data will still be displayed. This is basic where template and how where statement explain</p>
+              <p>The Left Join return all records from table1, and the matched record from the table2. The result is NULL from the right side where there is no data match. This is basic where template and how where statement explain</p>
               <div class="bg-light" style="padding:15px;">
                 <table>
                   <tr>
@@ -2130,7 +2129,7 @@
                   </tr>
                   <tr>
                     <td></td>
-                    <td>"innerJoin"</td>
+                    <td>"leftJoin"</td>
                     <td>:</td>
                     <td>[</td>
                   </tr>
@@ -2218,13 +2217,11 @@
                   </tr>
                 </table>
               </div>
-              <p>We can joining more than two table by adding group of parameter ("table", "field1", "field2"). Table on join parameter mean your joining table, then field1 / field2 on join parameter mean your related field between table A and table B. You can use alias for your table to declare easier. For That Sample, we will generate an SQL Script like below </p>
               <div class="bg-light" style="padding:15px;">
-                SELECT * FROM `your_table` <br>INNER JOIN `your_joining_table` ON `your_table`.your_field_on_table1 = `your_joining_table`.your_field_on_table <br>INNER JOIN `your_joining_table` AS C ON C.your_field_on_table1 = `your_table`.your_field_on_table2
+                SELECT * FROM `your_table` <br>LEFT JOIN `your_joining_table` ON `your_table`.your_field_on_table1 = `your_joining_table`.your_field_on_table <br>LEFT JOIN `your_joining_table` AS C ON C.your_field_on_table1 = `your_table`.your_field_on_table2
               </div>
               <br>
-              <p>Let's jump into an Example</p>
-              <br>
+              <!-- <p>Let's jump into an Example</p> -->
               <h5><font style="color: #f85351;">#</font> Example 1</h5>
               <br>
               <div class="bg-light" style="padding:15px;">
@@ -2255,7 +2252,7 @@
                   </tr>
                   <tr>
                     <td></td>
-                    <td>"innerJoin"</td>
+                    <td>"leftJoin"</td>
                     <td>:</td>
                     <td>[</td>
                   </tr>
@@ -2323,7 +2320,7 @@
               <br>
               <p>That JSON will generate SQL Script like below</p>
               <div class="bg-light" style="padding:15px;">
-                SELECT * FROM `TX_HDR_BOOK` as A INNER JOIN `TX_DTL_BOOK` as B ON A.BOOK_ID = B.DTL_HDR_ID LIMIT 0,10
+                SELECT * FROM `TX_HDR_BOOK` as A LEFT JOIN `TX_DTL_BOOK` as B ON A.BOOK_ID = B.DTL_HDR_ID LIMIT 0,10
               </div>
               <br><br>
             </div>
