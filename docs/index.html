@@ -1904,42 +1904,84 @@
                   </tr>
                   <tr>
                     <td></td>
-                    <td>"where"</td>
+                    <td>"innerJoin"</td>
                     <td>:</td>
                     <td>[</td>
                   </tr>
                   <tr>
                     <td></td>
                     <td></td>
+                    <td>{</td>
                     <td></td>
-                    <td>["field1", "=", "value"],</td>
                     <td></td>
                   </tr>
                   <tr>
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td>["field2", ">", "value"],</td>
+                    <td>"table"</td>
+                    <td>: "your_joining_table",</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>"field1"</td>
+                    <td>: "your_table.your_field_on_table",</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>"field2"</td>
+                    <td>: "your_joining_table.your_field_on_table",</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td>},</td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td>{</td>
+                    <td></td>
                     <td></td>
                   </tr>
                   <tr>
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td>.....</td>
-                    <td></td>
+                    <td>"table"</td>
+                    <td>: "your_joining_table AS C",</td>
                   </tr>
                   <tr>
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td>.....</td>
-                    <td></td>
+                    <td>"field1"</td>
+                    <td>: "C.your_field_on_table1",</td>
                   </tr>
                   <tr>
                     <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>"field2"</td>
+                    <td>: "your_table.your_field_on_table2",</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td>}</td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
                     <td></td>
                     <td>]</td>
+                    <td></td>
                     <td></td>
                   </tr>
                   <tr>
@@ -1950,13 +1992,340 @@
                   </tr>
                 </table>
               </div>
-              <p>Basic where statement will generate <b>AND</b> condition in every field and value. In that case, that will generate an SQL code like below</p>
+              <p>We can joining more than two table by adding group of parameter ("table", "field1", "field2"). Table on join parameter mean your joining table, then field1 / field2 on join parameter mean your related field between table A and table B. You can use alias for your table to declare easier. For That Sample, we will generate an SQL Script like below </p>
               <div class="bg-light" style="padding:15px;">
-                SELECT * FROM `your_table` WHERE `field1` = 'value' <b> AND </b> `field2` > 'value' <b> AND </b> `field3` = 'value' <b> AND </b> ......... <b> AND </b> .........
+                SELECT * FROM `your_table` <br>INNER JOIN `your_joining_table` ON `your_table`.your_field_on_table1 = `your_joining_table`.your_field_on_table <br>INNER JOIN `your_joining_table` AS C ON C.your_field_on_table1 = `your_table`.your_field_on_table2
               </div>
               <br>
-              <p>Every new condition will generate AND condition on Basic where. Format of statements is patent, ['field', 'operator', 'value'] as long as you don't modified the main of LUPI controller. All of operator that you apply on SQL code, you can use in LUPI too.  </p>
+              <p>Let's jump into an Example</p>
               <br>
+              <h5><font style="color: #f85351;">#</font> Example 1</h5>
+              <br>
+              <div class="bg-light" style="padding:15px;">
+                <table>
+                  <tr>
+                    <td>{</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"action"</td>
+                    <td>:</td>
+                    <td>"list", </td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"db"</td>
+                    <td>:</td>
+                    <td>"library",</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"table"</td>
+                    <td>:</td>
+                    <td>"TX_HDR_BOOK as A",</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"innerJoin"</td>
+                    <td>:</td>
+                    <td>[</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td>{</td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>"table"</td>
+                    <td>: "TX_DTL_BOOK as B",</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>"field1"</td>
+                    <td>: "B.DTL_HDR_ID",</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>"field2"</td>
+                    <td>: "A.BOOK_ID",</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td>}</td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>],</td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"start"</td>
+                    <td>:</td>
+                    <td>"0",</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"limit"</td>
+                    <td>:</td>
+                    <td>"10"</td>
+                  </tr>
+                  <tr>
+                    <td>}</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                </table>
+              </div>
+              <br>
+              <p>That JSON will generate SQL Script like below</p>
+              <div class="bg-light" style="padding:15px;">
+                SELECT * FROM `TX_HDR_BOOK` as A INNER JOIN `TX_DTL_BOOK` as B ON A.BOOK_ID = B.DTL_HDR_ID LIMIT 0,10
+              </div>
+              <br><br>
+              <h4><font style="color: #f85351;">#</font> Left Join</h4>
+              <p>Left Join will returns data that have matching values in both tables,If the values of one of the data do not match then the data will not be displayed, while the same data will still be displayed. This is basic where template and how where statement explain</p>
+              <div class="bg-light" style="padding:15px;">
+                <table>
+                  <tr>
+                    <td>{</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"action"</td>
+                    <td>:</td>
+                    <td>"list", </td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"db"</td>
+                    <td>:</td>
+                    <td>"your_database_config",</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"table"</td>
+                    <td>:</td>
+                    <td>"your_table",</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"innerJoin"</td>
+                    <td>:</td>
+                    <td>[</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td>{</td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>"table"</td>
+                    <td>: "your_joining_table",</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>"field1"</td>
+                    <td>: "your_table.your_field_on_table",</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>"field2"</td>
+                    <td>: "your_joining_table.your_field_on_table",</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td>},</td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td>{</td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>"table"</td>
+                    <td>: "your_joining_table AS C",</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>"field1"</td>
+                    <td>: "C.your_field_on_table1",</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>"field2"</td>
+                    <td>: "your_table.your_field_on_table2",</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td>}</td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>]</td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>}</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                </table>
+              </div>
+              <p>We can joining more than two table by adding group of parameter ("table", "field1", "field2"). Table on join parameter mean your joining table, then field1 / field2 on join parameter mean your related field between table A and table B. You can use alias for your table to declare easier. For That Sample, we will generate an SQL Script like below </p>
+              <div class="bg-light" style="padding:15px;">
+                SELECT * FROM `your_table` <br>INNER JOIN `your_joining_table` ON `your_table`.your_field_on_table1 = `your_joining_table`.your_field_on_table <br>INNER JOIN `your_joining_table` AS C ON C.your_field_on_table1 = `your_table`.your_field_on_table2
+              </div>
+              <br>
+              <p>Let's jump into an Example</p>
+              <br>
+              <h5><font style="color: #f85351;">#</font> Example 1</h5>
+              <br>
+              <div class="bg-light" style="padding:15px;">
+                <table>
+                  <tr>
+                    <td>{</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"action"</td>
+                    <td>:</td>
+                    <td>"list", </td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"db"</td>
+                    <td>:</td>
+                    <td>"library",</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"table"</td>
+                    <td>:</td>
+                    <td>"TX_HDR_BOOK as A",</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"innerJoin"</td>
+                    <td>:</td>
+                    <td>[</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td>{</td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>"table"</td>
+                    <td>: "TX_DTL_BOOK as B",</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>"field1"</td>
+                    <td>: "B.DTL_HDR_ID",</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>"field2"</td>
+                    <td>: "A.BOOK_ID",</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td>}</td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>],</td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"start"</td>
+                    <td>:</td>
+                    <td>"0",</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"limit"</td>
+                    <td>:</td>
+                    <td>"10"</td>
+                  </tr>
+                  <tr>
+                    <td>}</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                </table>
+              </div>
+              <br>
+              <p>That JSON will generate SQL Script like below</p>
+              <div class="bg-light" style="padding:15px;">
+                SELECT * FROM `TX_HDR_BOOK` as A INNER JOIN `TX_DTL_BOOK` as B ON A.BOOK_ID = B.DTL_HDR_ID LIMIT 0,10
+              </div>
+              <br><br>
             </div>
 
             <div class="tab-pane fade" id="selected-data" role="tabpanel" aria-labelledby="list-messages-list">
