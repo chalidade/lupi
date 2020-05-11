@@ -1873,7 +1873,90 @@
             <div class="tab-pane fade" id="joining-table" role="tabpanel" aria-labelledby="list-messages-list">
               <h1><font style="color: #f85351;">#</font> Joining Table</h1>
               <hr>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              <p>A join clause is used to combine rows from two or more tables, based on related column between them. There are two type join in LUPI, Left Join and Inner Join that will explain on below</p>
+              <h4><font style="color: #f85351;">#</font> Inner Join</h4>
+              <p>Inner Join will returns data that have matching values in both tables,If the values of one of the data do not match then the data will not be displayed, while the same data will still be displayed. This is basic where template and how where statement explain</p>
+              <div class="bg-light" style="padding:15px;">
+                <table>
+                  <tr>
+                    <td>{</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"action"</td>
+                    <td>:</td>
+                    <td>"list", </td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"db"</td>
+                    <td>:</td>
+                    <td>"your_database_config",</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"table"</td>
+                    <td>:</td>
+                    <td>"your_table",</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"where"</td>
+                    <td>:</td>
+                    <td>[</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>["field1", "=", "value"],</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>["field2", ">", "value"],</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>.....</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>.....</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td>]</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>}</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                </table>
+              </div>
+              <p>Basic where statement will generate <b>AND</b> condition in every field and value. In that case, that will generate an SQL code like below</p>
+              <div class="bg-light" style="padding:15px;">
+                SELECT * FROM `your_table` WHERE `field1` = 'value' <b> AND </b> `field2` > 'value' <b> AND </b> `field3` = 'value' <b> AND </b> ......... <b> AND </b> .........
+              </div>
+              <br>
+              <p>Every new condition will generate AND condition on Basic where. Format of statements is patent, ['field', 'operator', 'value'] as long as you don't modified the main of LUPI controller. All of operator that you apply on SQL code, you can use in LUPI too.  </p>
+              <br>
             </div>
 
             <div class="tab-pane fade" id="selected-data" role="tabpanel" aria-labelledby="list-messages-list">
