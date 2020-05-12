@@ -2328,7 +2328,176 @@
             <div class="tab-pane fade" id="selected-data" role="tabpanel" aria-labelledby="list-messages-list">
               <h1><font style="color: #f85351;">#</font> Selected Data</h1>
               <hr>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              <p>The SELECT statement is used to select fields that we want to showing. We can choose what we want to show. example if we have table TX_HDR_BOOK that have fields BOOK_NO, BOOK_TITLE, BOOK_PAGE, BOOK_YEAR and we just want to show BOOK_TITLE and BOOK_YEAR so we can use select parameter </p>
+              <h5><font style="color: #f85351;">#</font> Example 1</h5>
+              <br>
+              <div class="bg-light" style="padding:15px;">
+                <table>
+                  <tr>
+                    <td>{</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"action"</td>
+                    <td>:</td>
+                    <td>"list", </td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"db"</td>
+                    <td>:</td>
+                    <td>"library",</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"table"</td>
+                    <td>:</td>
+                    <td>"TX_HDR_BOOK",</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"selected"</td>
+                    <td>:</td>
+                    <td>["BOOK_TITLE", "BOOK_YEAR"],</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"start"</td>
+                    <td>:</td>
+                    <td>"0",</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"limit"</td>
+                    <td>:</td>
+                    <td>"10"</td>
+                  </tr>
+                  <tr>
+                    <td>}</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                </table>
+              </div>
+              <br>
+              <p>That JSON will generate SQL Script like below</p>
+              <div class="bg-light" style="padding:15px;">
+                SELECT `BOOK_TITLE`, `BOOK_YEAR` FROM `TX_HDR_BOOK` LIMIT 0,10
+              </div>
+              <p>Yes, Absolutly you can combine with other paramater like join or where statement</p>
+              <br>
+              <h5><font style="color: #f85351;">#</font> Example 2</h5>
+              <br>
+              <div class="bg-light" style="padding:15px;">
+                <table>
+                  <tr>
+                    <td>{</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"action"</td>
+                    <td>:</td>
+                    <td>"list", </td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"db"</td>
+                    <td>:</td>
+                    <td>"library",</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"table"</td>
+                    <td>:</td>
+                    <td>"TX_HDR_BOOK as A",</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"leftJoin"</td>
+                    <td>:</td>
+                    <td>[</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td>{</td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>"table"</td>
+                    <td>: "TX_DTL_BOOK as B",</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>"field1"</td>
+                    <td>: "B.DTL_HDR_ID",</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>"field2"</td>
+                    <td>: "A.BOOK_ID",</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td>}</td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>],</td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td style="vertical-align:top">"selected"</td>
+                    <td style="vertical-align:top">:</td>
+                    <td>[<br>"A.BOOK_TITLE as TITLE", <br>"B.DTL_AUTHOR as AUTHOR",<br>"B.DTL_DATE_PUBLISH as PUBLISH" <br>],</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"start"</td>
+                    <td>:</td>
+                    <td>"0",</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"limit"</td>
+                    <td>:</td>
+                    <td>"10"</td>
+                  </tr>
+                  <tr>
+                    <td>}</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                </table>
+              </div>
+              <br>
+              <p>We can aliases field as we want by adding <b>as</b> like above. That JSON will generate SQL Script like below</p>
+              <div class="bg-light" style="padding:15px;">
+                SELECT A.`BOOK_TITLE` as TITLE, B.`DTL_AUTHOR` as AUTHOR, B.`DTL_DATE_PUBLISH` as PUBLISH FROM `TX_HDR_BOOK` as A <br>
+                LEFT JOIN `TX_DTL_BOOK` as B ON A.BOOK_ID = B.DTL_HDR_ID LIMIT 0,10
+              </div>
+              <br><br>
             </div>
 
             <div class="tab-pane fade" id="group-data" role="tabpanel" aria-labelledby="list-messages-list">
