@@ -2503,13 +2503,332 @@
             <div class="tab-pane fade" id="group-data" role="tabpanel" aria-labelledby="list-messages-list">
               <h1><font style="color: #f85351;">#</font> Group Data By</h1>
               <hr>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              <p>The Group By parameter in Lupi usually use to group rows that have same value into sumary rows. An example you want to find the number of book that publish each year. The Group By parameter is often used with agregate function (COUNT, MAX, MIN, SUM, AVG) to group the result-set by one or more columns. Keep it mind that you need <b>selected</b> parameter to using group by in Lupi </p>
+              <h5><font style="color: #f85351;">#</font> Example 1</h5>
+              <br>
+              <div class="bg-light" style="padding:15px;">
+                <table>
+                  <tr>
+                    <td>{</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"action"</td>
+                    <td>:</td>
+                    <td>"list", </td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"db"</td>
+                    <td>:</td>
+                    <td>"library",</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"table"</td>
+                    <td>:</td>
+                    <td>"TX_HDR_BOOK",</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"selected"</td>
+                    <td>:</td>
+                    <td>["BOOK_AUTHOR", "BOOK_YEAR"],</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"groupBy"</td>
+                    <td>:</td>
+                    <td>"BOOK_YEAR",</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"start"</td>
+                    <td>:</td>
+                    <td>"0",</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"limit"</td>
+                    <td>:</td>
+                    <td>"10"</td>
+                  </tr>
+                  <tr>
+                    <td>}</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                </table>
+              </div>
+              <br>
+              <p>That JSON will generate SQL Script like below</p>
+              <div class="bg-light" style="padding:15px;">
+                SELECT `BOOK_AUTHOR`, `BOOK_YEAR` FROM `TX_HDR_BOOK` GROUP BY `BOOK_YEAR` LIMIT 0,10
+              </div>
+              <p>If you want to count how many book of author you can use combination of groupBy and raw select like below.</p>
+              <br>
+              <h5><font style="color: #f85351;">#</font> Example 2</h5>
+              <br>
+              <div class="bg-light" style="padding:15px;">
+                <table>
+                  <tr>
+                    <td>{</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"action"</td>
+                    <td>:</td>
+                    <td>"list", </td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"db"</td>
+                    <td>:</td>
+                    <td>"library",</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"table"</td>
+                    <td>:</td>
+                    <td>"TX_HDR_BOOK",</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"raw"</td>
+                    <td>:</td>
+                    <td>{</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"selected"</td>
+                    <td>:</td>
+                    <td>"BOOK_AUTHOR, count(BOOK_AUTHOR) as BOOK_TOTAL"</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>},</td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"groupBy"</td>
+                    <td>:</td>
+                    <td>"BOOK_AUTHOR",</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"start"</td>
+                    <td>:</td>
+                    <td>"0",</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"limit"</td>
+                    <td>:</td>
+                    <td>"10"</td>
+                  </tr>
+                  <tr>
+                    <td>}</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                </table>
+              </div>
+              <br>
+              <p>Raw parameter lets us use agregate funtion like count, sum, avg, and etc in select funtion. it mean we can use sql raw code in Lupi. which we will explain in another menu </p>
+              <div class="bg-light" style="padding:15px;">
+                SELECT `BOOK_AUTHOR`, count(`BOOK_AUTHOR`) as BOOK_TOTAL from TX_HDR_BOOK GROUP BY `BOOK_AUTHOR`
+              </div>
+              <br><br>
             </div>
 
             <div class="tab-pane fade" id="order-data" role="tabpanel" aria-labelledby="list-messages-list">
               <h1><font style="color: #f85351;">#</font> Order Data By</h1>
               <hr>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              <p>In every condition we need to sort data by ascending or descending. The Order By parameter in Lupi is used to sort the result-set in ascending (ASC) or descending (DESC). In default Lupi will sort data by ascending if you need to sort the record to descending use DESC keyword. </p>
+              <h5><font style="color: #f85351;">#</font> Example 1</h5>
+              <br>
+              <div class="bg-light" style="padding:15px;">
+                <table>
+                  <tr>
+                    <td>{</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"action"</td>
+                    <td>:</td>
+                    <td>"list", </td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"db"</td>
+                    <td>:</td>
+                    <td>"library",</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"table"</td>
+                    <td>:</td>
+                    <td>"TX_HDR_BOOK",</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"selected"</td>
+                    <td>:</td>
+                    <td>["BOOK_AUTHOR", "BOOK_YEAR"],</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"orderBy"</td>
+                    <td>:</td>
+                    <td>["BOOK_YEAR", "DESC"],</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"start"</td>
+                    <td>:</td>
+                    <td>"0",</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"limit"</td>
+                    <td>:</td>
+                    <td>"10"</td>
+                  </tr>
+                  <tr>
+                    <td>}</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                </table>
+              </div>
+              <br>
+              <p>That JSON will generate SQL Script like below</p>
+              <div class="bg-light" style="padding:15px;">
+                SELECT `BOOK_AUTHOR`, `BOOK_YEAR` FROM `TX_HDR_BOOK` ORDER BY `BOOK_YEAR` DESC LIMIT 0,10
+              </div>
+              <p>Absolutly we can combine with other parameter like join and where condition</p>
+              <br>
+              <h5><font style="color: #f85351;">#</font> Example 2</h5>
+              <br>
+              <div class="bg-light" style="padding:15px;">
+                <table>
+                  <tr>
+                    <td>{</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"action"</td>
+                    <td>:</td>
+                    <td>"list", </td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"db"</td>
+                    <td>:</td>
+                    <td>"library",</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"table"</td>
+                    <td>:</td>
+                    <td>"TX_HDR_BOOK as A",</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"leftJoin"</td>
+                    <td>:</td>
+                    <td>[</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td>{</td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>"table"</td>
+                    <td>: "TX_DTL_BOOK as B",</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>"field1"</td>
+                    <td>: "B.DTL_HDR_ID",</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>"field2"</td>
+                    <td>: "A.BOOK_ID",</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td>}</td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>],</td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"orderBy"</td>
+                    <td>:</td>
+                    <td>["A.BOOK_ID", "DESC"],</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"start"</td>
+                    <td>:</td>
+                    <td>"0",</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"limit"</td>
+                    <td>:</td>
+                    <td>"10"</td>
+                  </tr>
+                  <tr>
+                    <td>}</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                </table>
+              </div>
+              <br>
+              <p>The code will generate an SQL Code like below</p>
+              <div class="bg-light" style="padding:15px;">
+                SELECT * FROM `TX_HDR_BOOK` as A LEFT JOIN `TX_DTL_BOOK` as B ON A.BOOK_ID = B.DTL_HDR_ID ORDER BY A.BOOK_ID DESC LIMIT 0,10
+              </div>
+              <br><br>
             </div>
 
             <div class="tab-pane fade" id="raw-parameter" role="tabpanel" aria-labelledby="list-messages-list">

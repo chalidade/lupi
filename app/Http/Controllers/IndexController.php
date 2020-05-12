@@ -66,12 +66,12 @@ class IndexController extends Controller
          $connect->groupBy($input["groupby"]);
        }
 
-       if(isset($input["groupbyraw"])) {
-         $connect->groupBy(DB::raw($input["groupbyraw"]));
+       if(isset($input["raw"]["groupby"])) {
+         $connect->groupBy(DB::raw($input["raw"]["groupby"]));
        }
 
-       if (isset($input["selectraw"])) {
-         $connect->select(DB::raw($input["selectraw"]));
+       if (isset($input["raw"]["selected"])) {
+         $connect->select(DB::raw($input["raw"]["selected"]));
        }
 
        if (isset($input["selected"])) {
