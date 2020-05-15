@@ -3168,43 +3168,296 @@
                 </table>
               </div>
               <br><br>
-              <h5><font style="color: #f85351;">#</font> Table of Content</h5>
+              <h5><font style="color: #f85351;">#</font> Example 1</h5>
+              <p>This an example how to use function view header detail</p>
+              <div class="bg-light">
+              <table>
+                <tr>
+                  <td>{</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>"action"</td>
+                  <td>:</td>
+                  <td>"viewheaderdetail", </td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>"data"</td>
+                  <td>:</td>
+                  <td>[</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td>"HEADER"</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td>"DETAIL"</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td>"SPLIT_NOTA"</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td>],</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>"HEADER"</td>
+                  <td>:</td>
+                  <td>{</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <table>
+                      <tr>
+                        <td>"DB"</td>
+                        <td>:</td>
+                        <td>"omcargo",</td>
+                      </tr>
+                      <tr>
+                        <td>"TABLE"</td>
+                        <td>:</td>
+                        <td>"TX_HDR_BM",</td>
+                      </tr>
+                      <tr>
+                        <td>"PK"</td>
+                        <td>:</td>
+                        <td>["BM_ID", "496"]</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td>}</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>"DETAIL"</td>
+                  <td>:</td>
+                  <td>{</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <table>
+                      <tr>
+                        <td>"DB"</td>
+                        <td>:</td>
+                        <td>"omcargo",</td>
+                      </tr>
+                      <tr>
+                        <td>"TABLE"</td>
+                        <td>:</td>
+                        <td>"TX_DTL_BM",</td>
+                      </tr>
+                      <tr>
+                        <td>"FK"</td>
+                        <td>:</td>
+                        <td>["HDR_BM_ID", "bm_id"]</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td>},</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>"SPLIT_NOTA"</td>
+                  <td>:</td>
+                  <td>{</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <table>
+                      <tr>
+                        <td>"DB"</td>
+                        <td>:</td>
+                        <td>"omcargo",</td>
+                      </tr>
+                      <tr>
+                        <td>"TABLE"</td>
+                        <td>:</td>
+                        <td>"TX_SPLIT_NOTA",</td>
+                      </tr>
+                      <tr>
+                        <td>"FK"</td>
+                        <td>:</td>
+                        <td>["REQ_NO", "bm_no"]</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td>},</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>"EQUIPMENT"</td>
+                  <td>:</td>
+                  <td>{</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <table>
+                      <tr>
+                        <td>"DB"</td>
+                        <td>:</td>
+                        <td>"omcargo",</td>
+                      </tr>
+                      <tr>
+                        <td>"TABLE"</td>
+                        <td>:</td>
+                        <td>"TX_EQUIPMENT",</td>
+                      </tr>
+                      <tr>
+                        <td>"FK"</td>
+                        <td>:</td>
+                        <td>["REQ_NO", "bm_no"]</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td>}</td>
+                </tr>
+                <tr>
+                  <td>}</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </table>
+              </div>
+
+              <br>
+
+              <h5><font style="color: #f85351;">#</font> Table of Explanation</h5>
               <div class="table-responsive">
                 <table class="table" style="width:100%">
                   <tr>
                     <th width="15%">Parameter</th>
                     <th width="35%">Description</th>
-                    <th width="15%">Example</th>
-                    <th width="35%">Note</th>
+                    <th width="25%">Example</th>
+                    <th width="25%">Note</th>
                   </tr>
                   <tr>
-                    <td>"Data"</td>
+                    <td>"action"</td>
+                    <td>Use to declare that we use function viewheaderdetail</td>
+                    <td>: "viewheaderdetail"<td>
+                      The value of this parameter is fix
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>"data"</td>
                     <td>Use for declare data that will execute, value of this parameter is free fill but case sensitive. What we declare in this parameter will execute There's no limit for value of this parameter</td>
                     <td>:
                       [ <br>
                         "HEADER", <br>
                         "DETAIL",<br>
                         "SPLIT_NOTA",<br>
-                        "EQUIPMENT",<br>
-                        "DOCUMENT"<br>
-                      ]</td>
+                      ],</td>
                     <td>
                       The fixed one is HEADER, you must declare it as "HEADER" then another is free fill
                     </td>
                   </tr>
                   <tr>
-                    <td>"Data"</td>
-                    <td>Use for declare data that will execute, value of this parameter is free fill but case sensitive. What we declare in this parameter will execute There's no limit for value of this parameter</td>
-                    <td>:
-                      [ <br>
-                        "HEADER", <br>
-                        "DETAIL",<br>
-                        "SPLIT_NOTA",<br>
-                        "EQUIPMENT",<br>
-                        "DOCUMENT"<br>
-                      ]</td>
+                    <td>"HEADER"</td>
+                    <td>This first data that must be declare in this funtion to get header data that linked into all of its details.</td>
+                    <td> : <br>
+                      {<br> "DB": "omcargo", <br>
+                      "TABLE": "TX_HDR_BM", <br>
+                      "PK": [
+                          "BM_ID",
+                          "496"
+                      ]<br>},
                     <td>
-                      The fixed one is HEADER, you must declare it as "HEADER" then another is free fill
+                      In example i get data from table TX_HDR_BM that have primary key BM_ID in database omcargo. I get data where BM_ID = 496
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>"DETAIL"</td>
+                    <td>Because in array of data we declare <b>"DETAIL"</b> so this parameter will execute</td>
+                    <td> : <br>
+                      {<br> "DB": "omcargo", <br>
+                      "TABLE": "TX_DTL_BM", <br>
+                      "FK": [
+                          "HDR_BM_ID",
+                          "bm_id"
+                      ]<br>},
+                    <td>
+                      Same as HEADER, on detail we must declare FK not PK. FK mean Foreign Key. Field that relate into header seems like join. Note for header field it must be <b>lowercase</b> and for detail field must be same like database it mean case sensitive.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>"SPLIT_NOTA"</td>
+                    <td>Because in array of data we declare <b>"SPLIT_NOTA"</b> too so this parameter will execute</td>
+                    <td> : <br>
+                      {<br> "DB": "omcargo", <br>
+                      "TABLE": "TX_SPLIT_NOTA", <br>
+                      "FK": [
+                          "REQ_NO",
+                          "bm_no"
+                      ]<br>},
+                    <td>
+                      Like DETAIL, we must declare FK.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>"EQUIPMENT"</td>
+                    <td>We don't declare <b>EQUIPMENT</b> in data, so this parameter wont execute</td>
+                    <td> : <br>
+                      {<br> "DB": "omcargo", <br>
+                      "TABLE": "TX_EQUIPMENT", <br>
+                      "FK": [
+                          "REQ_NO",
+                          "bm_no"
+                      ]<br>},
+                    <br>}
+                    <td>
+                      <p>
+                        it wont be displayed on result because we don't declare it on <b>data</b>. As note, if in your data declare 3 ("HEADER", "DETAIL", "EQUIPMENT") then you create 4 parameter ("HEADER", "DETAIL", "EQUIPMENT", "DOCUMENT") it's ok. you will get only 3 result and no error.
+                      </p>
+                      <p>
+                         But if you declare 3 then you only create 2 parameter ("HEADER", "DETAIL"), you will got some error.
+                      </p>
                     </td>
                   </tr>
                 </table>
