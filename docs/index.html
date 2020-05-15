@@ -2982,6 +2982,233 @@
               <h1><font style="color: #f85351;">#</font> View Header Detail</h1>
               <hr>
               <p>If you separate data in header and detail, you can show them in action <b><i>viewheaderdetail</i></b>. This function is powerfull you can show data in one JSON from two or more table that have foreign key. An Example, I have two table : TX_HDR_USER and TX_DTL_USER. In TX_HDR_USER i choose USER_ID as primary key. Then in TX_DTL_USER i choose DTL_ID as primary key and DTL_HDR_ID as foreign key or ID that link into header data. Format view header detail you can see below</p>
+              <br>
+              <div class="bg-light" style="padding:15px;">
+                <table>
+                  <tr>
+                    <td>{</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"action"</td>
+                    <td>:</td>
+                    <td>"viewheaderdetail", </td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"data"</td>
+                    <td>:</td>
+                    <td>[</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>"HEADER"</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>"DETAIL1"</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>"DETAIL2"</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>....</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>....</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>],</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"HEADER"</td>
+                    <td>:</td>
+                    <td>{</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                      <table>
+                        <tr>
+                          <td>"DB"</td>
+                          <td>:</td>
+                          <td>"your_database_config",</td>
+                        </tr>
+                        <tr>
+                          <td>"TABLE"</td>
+                          <td>:</td>
+                          <td>"your_table",</td>
+                        </tr>
+                        <tr>
+                          <td>"PK"</td>
+                          <td>:</td>
+                          <td>["primary_key", "header_id"]</td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>}</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"DETAIL1"</td>
+                    <td>:</td>
+                    <td>{</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                      <table>
+                        <tr>
+                          <td>"DB"</td>
+                          <td>:</td>
+                          <td>"your_database_config",</td>
+                        </tr>
+                        <tr>
+                          <td>"TABLE"</td>
+                          <td>:</td>
+                          <td>"your_table",</td>
+                        </tr>
+                        <tr>
+                          <td>"FK"</td>
+                          <td>:</td>
+                          <td>["primary_key", "header_primary_key"]</td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>},</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"DETAIL2"</td>
+                    <td>:</td>
+                    <td>{</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                      <table>
+                        <tr>
+                          <td>"DB"</td>
+                          <td>:</td>
+                          <td>"your_database_config",</td>
+                        </tr>
+                        <tr>
+                          <td>"TABLE"</td>
+                          <td>:</td>
+                          <td>"your_table",</td>
+                        </tr>
+                        <tr>
+                          <td>"FK"</td>
+                          <td>:</td>
+                          <td>["primary_key", "header_primary_key"]</td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>},</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>....</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>....</td>
+                  </tr>
+                  <tr>
+                    <td>}</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                </table>
+              </div>
+              <br><br>
+              <h5><font style="color: #f85351;">#</font> Table of Content</h5>
+              <div class="table-responsive">
+                <table class="table" style="width:100%">
+                  <tr>
+                    <th width="15%">Parameter</th>
+                    <th width="35%">Description</th>
+                    <th width="15%">Example</th>
+                    <th width="35%">Note</th>
+                  </tr>
+                  <tr>
+                    <td>"Data"</td>
+                    <td>Use for declare data that will execute, value of this parameter is free fill but case sensitive. What we declare in this parameter will execute There's no limit for value of this parameter</td>
+                    <td>:
+                      [ <br>
+                        "HEADER", <br>
+                        "DETAIL",<br>
+                        "SPLIT_NOTA",<br>
+                        "EQUIPMENT",<br>
+                        "DOCUMENT"<br>
+                      ]</td>
+                    <td>
+                      The fixed one is HEADER, you must declare it as "HEADER" then another is free fill
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>"Data"</td>
+                    <td>Use for declare data that will execute, value of this parameter is free fill but case sensitive. What we declare in this parameter will execute There's no limit for value of this parameter</td>
+                    <td>:
+                      [ <br>
+                        "HEADER", <br>
+                        "DETAIL",<br>
+                        "SPLIT_NOTA",<br>
+                        "EQUIPMENT",<br>
+                        "DOCUMENT"<br>
+                      ]</td>
+                    <td>
+                      The fixed one is HEADER, you must declare it as "HEADER" then another is free fill
+                    </td>
+                  </tr>
+                </table>
+              </div>
             </div>
 
             <div class="tab-pane fade" id="insert-data" role="tabpanel" aria-labelledby="list-messages-list">
