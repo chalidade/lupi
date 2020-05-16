@@ -21,3 +21,4 @@ $router->get('/key', function() {
 
 $router->post('/index', 'IndexController@api');
 $router->post('/store', 'StoreController@api');
+$router->get('/map', 'MapController@index');
