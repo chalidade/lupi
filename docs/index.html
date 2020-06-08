@@ -3624,7 +3624,290 @@
             <div class="tab-pane fade" id="insert-data" role="tabpanel" aria-labelledby="list-messages-list">
               <h1><font style="color: #f85351;">#</font> Insert Data</h1>
               <hr>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              <p>Insert data in Lupi mean you can insert single or multiple data using just one JSON Format. Not only save you can update data with this JSON too. the key in on how you declare primaryKey value. primaryKey value is parameter that declare what field that you choose to be primary key. So if you fill the field it will update your data. If you keep it blank this function will read as insert. Here is the basic format. </p>
+              <br>
+              <div class="bg-light" style="padding:15px;">
+                <table>
+                  <tr>
+                    <td>{</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"action"</td>
+                    <td>:</td>
+                    <td>"simpleSave", </td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"db"</td>
+                    <td>:</td>
+                    <td>"your_database",</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"table"</td>
+                    <td>:</td>
+                    <td>"your_table",</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"primaryKey"</td>
+                    <td>:</td>
+                    <td>"table_primary_key",</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"value"</td>
+                    <td>:</td>
+                    <td>[</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td>{</td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>"field1_primary_key" </td>
+                    <td>: "your_value",</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>"field2" </td>
+                    <td>: "your_value",</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>"field3" </td>
+                    <td>: "your_value",</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td>},</td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td>{</td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>"field1_primary_key" </td>
+                    <td>: "your_value",</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>"field2" </td>
+                    <td>: "your_value",</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>"field3" </td>
+                    <td>: "your_value",</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td>}</td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td>]</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>}</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                </table>
+              </div>
+              <br>
+              <h5><font style="color: #f85351;">#</font> Example 1</h5>
+              <p>This an example how to use function SimpleSave detail</p>
+              <div class="bg-light" style="padding:15px;">
+                <table>
+                  <tr>
+                    <td>{</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"action"</td>
+                    <td>:</td>
+                    <td>"simpleSave", </td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"db"</td>
+                    <td>:</td>
+                    <td>"library",</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"table"</td>
+                    <td>:</td>
+                    <td>"TX_HDR_BOOK",</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"primaryKey"</td>
+                    <td>:</td>
+                    <td>"BOOK_ID",</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"value"</td>
+                    <td>:</td>
+                    <td>[</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td>{</td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>"BOOK_ID" </td>
+                    <td>: "",</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>"BOOK_TITLE" </td>
+                    <td>: "Moon",</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>"BOOK_AUTHOR" </td>
+                    <td>: "Chalidade",</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>"BOOK_PUBLISHER" </td>
+                    <td>: "Gramedia",</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>"BOOK_USER" </td>
+                    <td>: "2"</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td>},</td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td>{</td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>"BOOK_ID" </td>
+                    <td>: "",</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>"BOOK_TITLE" </td>
+                    <td>: "Sun",</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>"BOOK_AUTHOR" </td>
+                    <td>: "Linanurfauziah",</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>"BOOK_PUBLISHER" </td>
+                    <td>: "Gramedia",</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>"BOOK_USER" </td>
+                    <td>: "1"</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td>}</td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td>]</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>}</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                </table>
+              </div>
+              <br>
+              <p>
+                It mean, you will execute database library on table TX_HDR_BOOK that have primary key BOOK_ID and the value is array 2 data. As we can see on JSON, you keep primary_key_field blank (in this case BOOK_ID). So function will read this JSON as insert. It will generate SQL Script like below.
+              </p>
+              <div class="bg-light" style="padding:15px;">
+                INSERT INTO `library`.`TX_HDR_BOOK` (`BOOK_ID`, `BOOK_TITLE`, `BOOK_AUTHOR`, `BOOK_PUBLISHER`, `BOOK_USER`) VALUES (NULL, 'Moon', 'Chalidade', 'Gramedia', '2'), (NULL, 'Sun', 'Linanurfauziah', 'Gramedia', '1');
+              </div>
             </div>
 
             <div class="tab-pane fade" id="update-data" role="tabpanel" aria-labelledby="list-messages-list">
