@@ -3750,7 +3750,118 @@
               </div>
               <br>
               <h5><font style="color: #f85351;">#</font> Example 1</h5>
-              <p>This an example how to use function SimpleSave detail</p>
+              <p>This an example how to use function SimpleSave to insert Single data in a table</p>
+              <div class="bg-light" style="padding:15px;">
+                <table>
+                  <tr>
+                    <td>{</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"action"</td>
+                    <td>:</td>
+                    <td>"simpleSave", </td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"db"</td>
+                    <td>:</td>
+                    <td>"library",</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"table"</td>
+                    <td>:</td>
+                    <td>"TX_HDR_BOOK",</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"primaryKey"</td>
+                    <td>:</td>
+                    <td>"BOOK_ID",</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"value"</td>
+                    <td>:</td>
+                    <td>[</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td>{</td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>"BOOK_ID" </td>
+                    <td>: "",</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>"BOOK_TITLE" </td>
+                    <td>: "Moon",</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>"BOOK_AUTHOR" </td>
+                    <td>: "Chalidade",</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>"BOOK_PUBLISHER" </td>
+                    <td>: "Gramedia",</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>"BOOK_USER" </td>
+                    <td>: "2"</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td>}</td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td>]</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>}</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                </table>
+              </div>
+              <br>
+              <p>
+                Json mean that you will insert into library database on table TX_HDR_BOOK with value as you declare. Make sure that you fill the field correct and case sensitive, if you wrong you will get some error. It will generate SQL Script like below.
+              </p>
+              <div class="bg-light" style="padding:15px;">
+                INSERT INTO `library`.`TX_HDR_BOOK` (`BOOK_ID`, `BOOK_TITLE`, `BOOK_AUTHOR`, `BOOK_PUBLISHER`, `BOOK_USER`) VALUES (NULL, 'Moon', 'Chalidade', 'Gramedia', '2');
+              </div>
+              <br>
+              <h5><font style="color: #f85351;">#</font> Example 2</h5>
+              <p>This an example how to use function SimpleSave to insert Multiple data in a table</p>
               <div class="bg-light" style="padding:15px;">
                 <table>
                   <tr>
@@ -3907,6 +4018,166 @@
               </p>
               <div class="bg-light" style="padding:15px;">
                 INSERT INTO `library`.`TX_HDR_BOOK` (`BOOK_ID`, `BOOK_TITLE`, `BOOK_AUTHOR`, `BOOK_PUBLISHER`, `BOOK_USER`) VALUES (NULL, 'Moon', 'Chalidade', 'Gramedia', '2'), (NULL, 'Sun', 'Linanurfauziah', 'Gramedia', '1');
+              </div>
+              <br>
+              <h5><font style="color: #f85351;">#</font> Example 3</h5>
+              <p>This an example how to use function SimpleSave to update Multiple data in a table</p>
+              <div class="bg-light" style="padding:15px;">
+                <table>
+                  <tr>
+                    <td>{</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"action"</td>
+                    <td>:</td>
+                    <td>"simpleSave", </td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"db"</td>
+                    <td>:</td>
+                    <td>"library",</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"table"</td>
+                    <td>:</td>
+                    <td>"TX_HDR_BOOK",</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"primaryKey"</td>
+                    <td>:</td>
+                    <td>"BOOK_ID",</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"value"</td>
+                    <td>:</td>
+                    <td>[</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td>{</td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>"BOOK_ID" </td>
+                    <td>: "2",</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>"BOOK_TITLE" </td>
+                    <td>: "Moon",</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>"BOOK_AUTHOR" </td>
+                    <td>: "Chalidade",</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>"BOOK_PUBLISHER" </td>
+                    <td>: "Gramedia",</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>"BOOK_USER" </td>
+                    <td>: "2"</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td>},</td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td>{</td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>"BOOK_ID" </td>
+                    <td>: "1",</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>"BOOK_TITLE" </td>
+                    <td>: "Sun",</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>"BOOK_AUTHOR" </td>
+                    <td>: "Linanurfauziah",</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>"BOOK_PUBLISHER" </td>
+                    <td>: "Gramedia",</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>"BOOK_USER" </td>
+                    <td>: "1"</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td>}</td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td>]</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>}</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                </table>
+              </div>
+              <br>
+              <p>
+                This json will help you to update multiple data in one hit. It will generate SQL Script like below.
+              </p>
+              <div class="bg-light" style="padding:15px;">
+                UPDATE `TX_HDR_BOOK` SET `BOOK_TITLE` = 'Moon', `BOOK_AUTHOR` = 'Chalidade', `BOOK_PUBLISHER` = 'Gramedia', `BOOK_USER` = '2' WHERE `TX_HDR_BOOK`.`BOOK_ID` = 2; UPDATE `TX_HDR_BOOK` SET `BOOK_TITLE` = 'Sun', `BOOK_AUTHOR` = 'Linanurfauziah', `BOOK_PUBLISHER` = 'Gramedia', `BOOK_USER` = '1' WHERE `TX_HDR_BOOK`.`BOOK_ID` = 1;
               </div>
             </div>
 
