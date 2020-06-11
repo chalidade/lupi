@@ -4440,7 +4440,114 @@
             <div class="tab-pane fade" id="delete-data" role="tabpanel" aria-labelledby="list-messages-list">
               <h1><font style="color: #f85351;">#</font> Delete Data</h1>
               <hr>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              <p>This menu will explain how we delete data using LUPI. There are several way to delete data using LUPI. Let's break down here.</p>
+              <h5><font style="color: #f85351;">#</font> Delete Header Detail</h5>
+              <p>This an example how to use function delHeaderDetail to delete data in format header and detail. You can use it if your data linked on more than one table</p>
+              <div class="bg-light" style="padding:15px;">
+                <table>
+                  <tr>
+                    <td>{</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"action"</td>
+                    <td>:</td>
+                    <td>"delHeaderDetail", </td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"data"</td>
+                    <td>:</td>
+                    <td>["HEADER", "DETAIL"],</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"HEADER"</td>
+                    <td>:</td>
+                    <td>{</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>"DB" </td>
+                    <td>: "library",</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>"TABLE" </td>
+                    <td>: "TX_HDR_USER",</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>"PK" </td>
+                    <td>: ["USER_ID", "1"]</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td>},</td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"DETAIL"</td>
+                    <td>:</td>
+                    <td>{</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>"DB" </td>
+                    <td>: "library",</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>"TABLE" </td>
+                    <td>: "TX_DTL_USER",</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>"FK" </td>
+                    <td>: ["DTL_HDR_ID","USER_ID"]</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td>},</td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>}</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                </table>
+              </div>
+              <br>
+              <p>
+                This json will help you to delete multiple data on multiple table in one hit. First it will delete every detail linked on foreign key, Then All detail delete, it will delete header. You can see on this SQL Script below.
+              </p>
+              <div class="bg-light" style="padding:15px;">
+                DELETE FROM `TX_DTL_USER` WHERE `TX_DTL_USER`.`DTL_HDR_ID` = '1' <br>
+                DELETE FROM `TX_HDR_USER` WHERE `TX_HDR_USER`.`USER_ID` = '1'
+              </div>
+              <br>
             </div>
 
             <div class="tab-pane fade" id="store-header-detail" role="tabpanel" aria-labelledby="list-messages-list">
@@ -4452,7 +4559,114 @@
             <div class="tab-pane fade" id="delete-header-detail" role="tabpanel" aria-labelledby="list-messages-list">
               <h1><font style="color: #f85351;">#</font> Delete Header Detail</h1>
               <hr>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              <p>This menu will explain how we delete data using LUPI. There are several way to delete data using LUPI. Let's break down here.</p>
+              <h5><font style="color: #f85351;">#</font> Delete Header Detail</h5>
+              <p>This an example how to use function delHeaderDetail to delete data in format header and detail. You can use it if your data linked on more than one table</p>
+              <div class="bg-light" style="padding:15px;">
+                <table>
+                  <tr>
+                    <td>{</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"action"</td>
+                    <td>:</td>
+                    <td>"delHeaderDetail", </td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"data"</td>
+                    <td>:</td>
+                    <td>["HEADER", "DETAIL"],</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"HEADER"</td>
+                    <td>:</td>
+                    <td>{</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>"DB" </td>
+                    <td>: "library",</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>"TABLE" </td>
+                    <td>: "TX_HDR_USER",</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>"PK" </td>
+                    <td>: ["USER_ID", "1"]</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td>},</td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>"DETAIL"</td>
+                    <td>:</td>
+                    <td>{</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>"DB" </td>
+                    <td>: "library",</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>"TABLE" </td>
+                    <td>: "TX_DTL_USER",</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>"FK" </td>
+                    <td>: ["DTL_HDR_ID","USER_ID"]</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td>},</td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>}</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                </table>
+              </div>
+              <br>
+              <p>
+                This json will help you to delete multiple data on multiple table in one hit. First it will delete every detail linked on foreign key, Then All detail delete, it will delete header. You can see on this SQL Script below.
+              </p>
+              <div class="bg-light" style="padding:15px;">
+                DELETE FROM `TX_DTL_USER` WHERE `TX_DTL_USER`.`DTL_HDR_ID` = '1' <br>
+                DELETE FROM `TX_HDR_USER` WHERE `TX_HDR_USER`.`USER_ID` = '1'
+              </div>
+              <br>
             </div>
 
             <div class="tab-pane fade" id="require-once" role="tabpanel" aria-labelledby="list-messages-list">
