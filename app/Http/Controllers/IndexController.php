@@ -95,7 +95,7 @@ class IndexController extends Controller
        return ["count" => $count, "result"=>$result];
      }
 
-     public static function viewHeaderDetail($input) {
+     function viewHeaderDetail($input) {
          $data    = $input["data"];
          $count   = count($input["data"]);
          $pk      = $input["HEADER"]["PK"][0];
@@ -268,4 +268,14 @@ class IndexController extends Controller
          }
          return $vwdata;
        }
+
+     function cekLogin($input) {
+       $data = DB::connection($input["db"])->table($input["table"])->where([$input["value"]])->first();
+       if (!empty($data)) {
+         return ["message"=>"Login Success", "data"=>$data];
+       } else {
+         return ["message"=> "Check Your Username / Password"];
+       }
+     }
+
 }

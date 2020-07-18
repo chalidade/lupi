@@ -29,7 +29,7 @@ class StoreController extends Controller
        $data                      = [];
 
        // Get Last Sequece Data From DB
-       $sequence                  = DB::connection($input["db"])->table(strtoupper($input["table"]))->orderBy($primaryKey, "DESC")->take(1)->select("$primaryKey as seq")->get();
+       $sequence                  = DB::connection($input["db"])->table($input["table"])->orderBy($primaryKey, "DESC")->take(1)->select("$primaryKey as seq")->get();
        try {
          $seq                     = ($sequence[0]->seq)+1;
        } catch (\ErrorException $e) {
@@ -101,7 +101,7 @@ class StoreController extends Controller
      function saveheaderdetail($input) {
          $data    = $input["data"];
          $count   = count($input["data"]);
-         $cek     = strtoupper($input["HEADER"]["PK"]);
+         $cek     = $input["HEADER"]["PK"];
          $dbhdr   = $input["HEADER"]["DB"];
          $tblhdr  = $input["HEADER"]["TABLE"];
 
@@ -181,7 +181,7 @@ class StoreController extends Controller
          $val     = $input[$data];
          $connect  = DB::connection($val["DB"])->table($val["TABLE"]);
            if ($data == "HEADER") {
-              $header   = $connect->where(strtoupper($pk), "like", strtoupper($pkVal))->get();
+              $header   = $connect->where($pk, "like", $pkVal)->get();
               $header   = json_decode(json_encode($header), TRUE);
            }
 
@@ -189,7 +189,7 @@ class StoreController extends Controller
              $fil     = [];
              $fk      = $val["FK"][0];
              $fkhdr   = $header[0][$val["FK"][1]];
-             $detail  = $connect->where(strtoupper($fk), "like", "%".strtoupper($fkhdr)."%")->first();
+             $detail  = $connect->where($fk, "like", "%".$fkhdr."%")->first();
                if (file_exists($detail->doc_path)) {
                  $file    = unlink($detail->doc_path);
                  $result["file"] = "File delete success";
@@ -201,11 +201,11 @@ class StoreController extends Controller
            else {
              $fk      = $val["FK"][0];
              $fkhdr   = $header[0][$val["FK"][1]];
-             $detail  = $connect->where(strtoupper($fk), "like",  "%".strtoupper($fkhdr)."%")->delete();
+             $detail  = $connect->where($fk, "like",  "%".$fkhdr."%")->delete();
            }
        }
        $result["data"] = " Delete Success";
-       $delHead = DB::connection($input["HEADER"]["DB"])->table($input["HEADER"]["TABLE"])->where(strtoupper($pk), "like", strtoupper($pkVal))->delete();
+       $delHead = DB::connection($input["HEADER"]["DB"])->table($input["HEADER"]["TABLE"])->where($pk, "like", $pkVal)->delete();
        return $result;
      }
 
@@ -216,17 +216,17 @@ class StoreController extends Controller
        }
        if(isset($input["whereNotIn"][0])) {
        $in        = $input["whereNotIn"];
-       $connection->whereNotIn(strtoupper($in[0]), $in[1]);
+       $connection->whereNotIn($in[0], $in[1]);
        }
 
        if(!empty($input["whereIn"][0])) {
        $in        = $input["whereIn"];
-       $connection->whereIn(strtoupper($in[0]), $in[1]);
+       $connection->whereIn($in[0], $in[1]);
        }
 
        $connection->update($input["update"]);
        $data = $connection->get();
-       return ["msg"=>"Success", "result"=>$data];
+       return ["message"=>"Success", "result"=>$data];
      }
 
 }
